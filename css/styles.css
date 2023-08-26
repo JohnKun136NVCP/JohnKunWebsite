@@ -1,0 +1,50 @@
+:root{
+    --titles: #900C3F;
+    --subtitles:#C70039;
+    --yellow:#FFC107;
+    --black:#17202A;
+    --white:#FDFEFE;
+    --blue:#3498DB;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 16px;
+}
+
+.titlemain{
+    font-size: 3.8rem;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--titles);
+}
+
+.titlemain span{
+    font-family: 'Rubik Iso', cursive;
+    font-size: 2rem;
+    color: var(--subtitles);
+}
+.contenedor{
+    width: 120rem;
+    margin: 0 auto;
+ }
+
+ .nav-bg{
+    background-color: var(--blue);
+ }
+
+ .nav-main{
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .nav-main a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;    
+ }
+ .nav-main a:hover{
+    background-color: var(--yellow);
+ }
