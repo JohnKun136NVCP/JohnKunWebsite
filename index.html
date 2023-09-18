@@ -21,29 +21,79 @@
             <a href="html/aboutme.html">About me</a>
             <a href="html/blogs.html">Projects</a>
             <a href="html/contactme.html">Contact</a>
-        </nav>
+        </nav> <!--.nav-main contenedor-->
     </div>
-    <section>
-        <h2 class="titlemain">Software developer and cybersecurity analyst</h2>
-        <img width="150" height="150" src="https://img.icons8.com/doodle/150/planet--v1.png" alt="planet--v1"/>
-        <p>Kepler-452b</p>
-        <a href="https://youtu.be/RgzUUI1LAJc?si=eN7QLg8CpdW0QK3R">Push me</a>
+    <section class="hero">
+        <div class="containt-hero">
+            <h2>Software developer and cybersecurity analyst</h2>
+            <div class="localization">
+                <img width="150" height="150" src="https://img.icons8.com/doodle/150/planet--v1.png" alt="planet--v1"/>
+                <p>Kepler-452b</p>
+            </div><!--.localization-->
+            <a class="boton" href="https://youtu.be/RgzUUI1LAJc?si=eN7QLg8CpdW0QK3R" target="_blank">Push me</a>
+        </div><!--.containt-hero-->
     </section>
-    <main>
+    <main class="contenedor shadow">
         <h2 class="titlemain">My projects</h2>
-        <h2>AI</h2>
-        <img width="50" height="50" src="https://img.icons8.com/plasticine/50/bot.png" alt="bot"/>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut atque veritatis iusto est facilis, odit repellendus tempore, non tempora blanditiis repudiandae debitis adipisci delectus nihil veniam perspiciatis sunt esse quod!</p>
-        <h2>Cybersecurity</h2>
-        <img width="50" height="50" src="https://img.icons8.com/external-others-pike-picture/50/external-cybersecurity-pentesting-software-others-pike-picture.png" alt="external-cybersecurity-pentesting-software-others-pike-picture"/>
-        <img width="50" height="50" src="https://img.icons8.com/dusk/50/hips.png" alt="hips"/>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eaque repellat nihil possimus dolorum, hic, assumenda illo, explicabo minus doloribus aspernatur necessitatibus at veniam placeat. Et earum ipsa illo provident?</p>
-        <h2>Software development</h2>
-        <img width="50" height="50" src="https://img.icons8.com/plasticine/50/software-box.png" alt="software-box"/>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam dolore unde dolorum ea quasi, ratione porro, ipsa accusamus suscipit deserunt recusandae voluptatem eum molestiae illum adipisci nemo doloremque temporibus quos!</p>
-        <h2>My blog space</h2>
-        <img width="50" height="50" src="https://img.icons8.com/color/50/decu.png" alt="decu"/>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis corrupti porro, et incidunt doloribus a ipsam qui facilis magni, recusandae excepturi, consectetur rem asperiores quaerat hic minima in est ad.</p>
+        <div class="services">
+            <section class="service">
+                <h2>AI</h2>
+                <div class="icons">
+                    <img width="120px" height="120px" src="https://img.icons8.com/plasticine/120/bot.png" alt="bot"/>
+                </div>
+                <p>AI project harnesses advanced machine learning and neural networks to tackle real-world challenges, driving innovation and pushing the boundaries of AI capabilities.</p>
+            </section>
+            <section class="service">
+                <h2>Cybersecurity</h2>
+                <div class="icons">
+                    <img width="120px" height="120px" src="https://img.icons8.com/dusk/120/hips.png" alt="hips"/>
+                </div>
+                <p>Cybersecurity project leverages cutting-edge technologies to defend against cyber threats, safeguarding digital assets and enhancing online safety.</p>
+            </section>
+            <section class="service">
+                <h2>My SD</h2>
+                <div class="icons">
+                    <img width="120px" height="120px" src="https://img.icons8.com/plasticine/120/software-box.png" alt="software-box"/>
+                </div>
+                <p>Software development project focuses on creating innovative software solutions, utilizing industry best practices to streamline processes. </p>
+            </section>
+            <section class="service">
+                <h2>My blog space</h2>
+                <div class="icons">
+                    <img width="120px" height="120px" src="https://img.icons8.com/color/120/decu.png" alt="decu"/>
+                </div>
+                <p>My personal blog is a digital space where I share insights, experiences, and perspectives on topics like networks, anime series,and my projects actually I'm working.</p>
+            </section>
+        </div><!--.services-->
+        <section>
+            <h2>Contact</h2>
+            <form class="forms">
+                <fieldset>
+                    <legend>If you have any suggestion please let me know </legend>
+                    <div class="containt-fields">
+                        <div class="field">
+                            <label>Name</label>
+                            <input class="input-text" type="text" placeholder="Your name">
+                        </div>
+                        <div class="field">
+                            <label>Telegram</label>
+                            <input class="input-text" type="text" placeholder="Your telegram. If you don't have, type 'none'">
+                        </div>
+                        <div class="field">
+                            <label>Email</label>
+                            <input class="input-text" type="email" placeholder="Your email">
+                        </div>
+                        <div class="field">
+                            <label>Message</label>
+                            <textarea class="input-text"></textarea>
+                        </div>
+                        <div class="al-right flex">    
+                            <input class="boton .w-sm-100" type="submit" value="Send">
+                        </div>
+                    </div><!--.containt.fields-->
+                </fieldset>
+            </form>
+        </section>
     </main> 
     <section>
         <h2 class="titlemain">Contact me</h2>
@@ -62,6 +112,8 @@
         </a>
     </div>
     </section>
-    <p>All rights reserved. YoshioKeimaKun</p>
+    <footer>
+        <h4>All rights reserved. @YoshioKeimaKun DevNet</h4>
+    </footer>
 </body>
 </html>
