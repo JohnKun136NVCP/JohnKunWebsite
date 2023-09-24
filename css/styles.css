@@ -78,6 +78,9 @@ h4{
  }
 
 
+
+
+
 .boton{
     background-color: var(--teal);
     color: var(--white);
@@ -171,17 +174,24 @@ Size of screen Tablet*/
 }
 
 .hero {
-    background-image: url(../img/animepiano2.jpg);
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /*Doesnt repeat same picture*/
     background-size: cover;
     height: 400px;
     position: relative;
     margin-bottom: 2rem;
 }
+
+/*No reapeat same image*/
+.aboutmeImg{
+    background-image: url(/img/animescenary.jpg);
+}
+.homeImg{
+    background-image: url(../img/animepiano2.jpg);
+}
 .containt-hero {
     position:absolute;
     background-color: rgba(0,0,0,0.7);/*Trnasparencia rgba*/
-    background-color: rbg(0 0 0 / 70%);
+    /*background-color: rbg(0 0 0 / 70%);*/
     width: 100%;
     height: 100%;
     /*align vertical and horizontally */
