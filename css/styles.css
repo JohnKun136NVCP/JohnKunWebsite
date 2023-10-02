@@ -211,7 +211,7 @@ Size of screen Tablet*/
 /*Scroll snap*/
 .services,
 .nav-main,
-.forms,
+.formular,
 .foot{
     scroll-snap-align: center;
     scroll-snap-stop: always;
