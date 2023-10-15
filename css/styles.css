@@ -197,14 +197,19 @@ Size of screen Tablet*/
 
 /*No reapeat same image*/
 .aboutmeImg{
-    background-image: url(/img/animescenary.jpg);
+    background-image: url(../img/animegirl3.jpg);
 }
 .homeImg{
-    background-image: url(../img/animepiano2.jpg);
+    background-image: url(../img/animepeople.jpg);
 }
 .contactmeImg{
-    background-image: url(../img/animetrain.png);
+    background-image: url(../img/animegirl.jpg);
 }
+.blogImg{
+    background-image: url(../img/animegirl2.jpg);
+}
+
+
 .containt-hero {
     position:absolute;
     background-color: rgba(0,0,0,0.7);/*Trnasparencia rgba*/
