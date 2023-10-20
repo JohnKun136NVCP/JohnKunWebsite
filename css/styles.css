@@ -439,3 +439,27 @@ Size of screen Tablet*/
 .text-visible {
     opacity: 1; /* Hacer visible cuando se activa la clase */
 }
+/*BLOG SECTION*/
+
+/* Estilos para la lista de artículos */
+.article-list {
+    list-style: none;
+    padding: 0;
+}
+
+.article-list li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.article-list h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.article-list p {
+    margin: 0;
+    font-size: 16px;
+}
