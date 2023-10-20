@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta name="google-site-verification" content="ii25II9IdLP1lSIOn3oxzGTJWh5QdX47kSsflrIHsAM" />
     <meta name="msvalidate.01" content="4C23042BF6E51BE0F57DF26A03EE74EA" />
@@ -27,12 +27,12 @@
             shortLang = shortLang.split('-')[0];
         if (shortLang.indexOf('_') !== -1)
             shortLang = shortLang.split('_')[0];
-        if(shortLang === 'es')
+        if(shortLang === 'es-419')
             window.location.replace('../' + shortLang + '/index.html');
-        if(shortLang === 'en')
+        if(shortLang === 'en-US')
             console.log(shortLang)
             window.location.replace('/' + shortLang + '/index.html');
-        if(shortLang === 'ja')
+        if(shortLang === 'ja-JP')
             console.log(shortLang)
             window.location.replace('../' + shortLang + '/index.html');
     </script>
