@@ -2,10 +2,120 @@
 <html lang="ja-JP">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;900&&family=Rubik+Iso&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/css/styles.css"as="style">
+    <link rel="icon" type="image/x-icon" href="/img/iaicon.ico">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/normalize.css" href="/css/normalize.css"as="style">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <title>My Blog</title>
+    <meta name="description" content="A guy with expectation of his life. In other words, talking about myself and my work. (～￣▽￣)～">
+    <meta name="keyworkds" content="netdeveloper, anime, blogs of science, blogs of anime,my live, cv, github,search me, projects,anime,science,software,developer,physicist, engineer,yoshiko,keima,kun,me">
+    <meta name="author" content="JohnKun136NVCP">
 </head>
+
 <body>
-    <h1>This a test</h1>
+    <header class="headerImg">
+        <h1 class="titlemain">アーティキュールと<span> プロジェクト</span><img src="/img/ranmaywy.png" width="60px" height="60px" > </h1>
+    
+        <div class="nav-bg">
+            <nav class="nav-main contenedor">
+                <a href="/ja/index.html">ホーム</a>
+                <a href="/ja/aboutmejp.html">私について</a>
+                <a href="/ja/blogsjp.html">アーティキュールとプロジェクト</a>
+                <a href="/ja/contactmejp.html">連絡先</a>
+            </nav> <!--.nav-main contenedor-->
+        </div>
+    </header>
+    <section class="hero blogImg">
+        <div class="containt-hero">
+            <h2>「ルルーシュって、世界を破壊して、魔王。なんか、親近感を抱きますね。」</h2>
+            <div class="localization">
+                <p align="center">- ルルーシュ・ヴィ・ブリタニア, より <img width="100px" src="https://i.pinimg.com/originals/25/8f/11/258f119f5bfa48f7543c7f76029d7b52.png"></p>
+            </div><!--.localization-->
+
+        </div><!--.containt-hero-->
+    </section>
+    <main class="contenedor shadow">
+        <h2 class="titlemain">記事</h2>
+        <ul id="articleList" class="containt-fields article-list  ">
+            <li class="articulo" data-tags="anime, ciencia, tecnologia" data-fecha="2023-09-01" data-numero="1">
+                <h2><a href="blogs/art01/art01.html">初音ミクはホログラムではありません。 🤯</a></h2>
+                <div class="containerTags">
+                    <img  src="https://i.cbc.ca/1.3597213.1580395854!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_940/hatsune-miku.JPG"></div> 
+                    <a href="https://www.cbc.ca/news/canada/montreal/hatsune-miku-mtl-1.5445686"><h4>Holographic pop star Hatsune Miku to perform Montreal concert | CBC News</h4></a>
+                </div>
+                <div class="artdescript"><p>初音ミクのコンサートに行ったことがあるだろうか？もし答えがイエスなら、"なぜ私は平面スクリーンを見ているだけで、曲がっていないのだろう？"と自問したことがあるだろうか？その答えは光学にある。ステージで歌い、私たちを魅了する初音ミクの秘密を知りたくありませんか？</p></div>
+                <div class="tag anime">アニメ</div>
+                <div class="tag science">科学</div>
+                <div class="tag tecnology">テクノロジー </div>
+                <div class="tag"> <button class="button" onclick="location.href='#'">続きを</button></div>
+            </li>
+            <!---
+            <li class="articulo" data-etiqueta="etiqueta2" data-fecha="2023-09-03" data-numero="2">
+                <h2>Artículo 2</h2>
+                <p>Etiqueta: Etiqueta 2</p>
+            </li>
+            <li class="articulo" data-etiqueta="etiqueta3" data-fecha="2023-09-05" data-numero="3">
+                <h2>Artículo 3</h2>
+                <p>Etiqueta: Etiqueta 3</p>
+            </li>
+            <li class="articulo" data-etiqueta="anime" data-fecha="2023-09-30" data-numero="4">
+                <h2>Artículo 4</h2>
+                <p>Etiqueta: Etiqueta 3</p>
+            </li>-->
+        </ul>
+        <div class="formular">
+            <div class="search">
+                <div>
+                    <label class="field" for="filterTag">Tag:</label>
+                    <select class="radius-filter" id="filterTag">
+                        <option value="">すべて</option>
+                        <option value="anime">アニメ</option>
+                        <option value="ciencia">科学</option>
+                        <option value="tecnologia">テクノロジー</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="field" for="date-filter">日付:</label>
+                    <input type="date" class="radius-filter" id="filterDate">
+                </div>
+                <div>
+                    <label for="filterNumber">記事番号:</label>
+                    <input type="text" class="radius-filter noarticule" id="filterNumber">
+                </div>
+                <div class="al-right flex ">
+                    <button class="boton .w-sm-100"  id="filterButton">フィルター</button>
+                </div>
+            </div>
+        </div>
+        <script src="/js/artic.js"></script>
+
+    </main> 
+    <footer class="footer">
+        <div class="contenedor"></div>
+            <h2 class="titlemain">連絡先</h2>
+            <div class="foot contenedorfoot">
+                <a href="https://t.me/yoshimakayaba" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/telegram-app.png" alt="telegram-app"/>
+                </a>
+                <a href="https://www.linkedin.com/in/juan-angeles-hern%C3%A1ndez-b55182247/" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/linkedin--v2.png"alt="linkedin--v2" class="social"/>
+                </a>
+                <a href="https://github.com/JohnKun136NVCP" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/github--v1.png" alt="github--v1"/>
+                </a>
+                <a href="https://twitter.com/JohnWilliamBn" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/twitter-circled.png" alt="twitter-circled"/>         
+                </a>
+            </div>
+        </div>
+        <h4>無断転載を禁じます。@YoshioKeimaKun DevNet</h4>
+    </footer>
+    
 </body>
 </html>
