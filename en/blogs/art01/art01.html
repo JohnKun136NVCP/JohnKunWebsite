@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+    <meta name="google-site-verification" content="ii25II9IdLP1lSIOn3oxzGTJWh5QdX47kSsflrIHsAM" />
+    <meta name="msvalidate.01" content="4C23042BF6E51BE0F57DF26A03EE74EA" />
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;900&&family=Rubik+Iso&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/css/styles.css"as="style">
+    <link rel="icon" type="image/x-icon" href="/img/iaicon.ico">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/normalize.css" href="/css/normalize.css"as="style">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>YoshioKeimaWebsite</title>
+    <meta name="description" content="A guy with expectation of his life. In other words, talking about myself and my work. (～￣▽￣)～">
+    <meta name="keyworkds" content="netdeveloper, anime, blogs of science, blogs of anime,my live, cv, github,search me, projects,anime,science,software,developer,physicist, engineer,yoshiko,keima,kun,me">
+    <meta name="author" content="JohnKun136NVCP">
+</head>
+
+<body>
+    <header class="headerImg">
+        <h1 class="titlemain">Yoshio <span> Keima</span> </h1>
+    
+        <div class="nav-bg">
+            <nav class="nav-main contenedor">
+                <a href="/es/index.html">Inicio</a>
+                <a href="/es/aboutmees.html">Acerca de mí</a>
+                <a href="/es/blogses.html">Proyectos</a>
+                <a href="/es/contactmees.html">Contacto</a>
+            </nav> <!--.nav-main contenedor-->
+        </div>
+    </header>
+    <section class="hero blogImg">
+        <div class="containt-hero">
+            <h2>"No puedo salvarme a mí mismo si no sé lo que soy, y no puedo vivir si no sé lo que quiero."</h2>
+            <div class="localization">
+                <p>- Lelouch Lamperouge, de "Code Geass"</p>
+            </div><!--.localization-->
+
+        </div><!--.containt-hero-->
+    </section>
+    <main class="contenedor shadow">
+        <h2 class="titlemain">Mis artículos</h2>
+        <ul class="article-list containt-fields">
+            <li class="articulo" data-etiqueta="anime" data-fecha="2023-09-01" data-numero="1">
+                <h2>Artículo 1</h2>
+                <p>Etiqueta: Etiqueta 1</p>
+                <div class="tag anime">Anime</div>
+                <div class="tag science">Ciencia</div>
+            </li>
+            <li class="articulo" data-etiqueta="etiqueta2" data-fecha="2023-09-03" data-numero="2">
+                <h2>Artículo 2</h2>
+                <p>Etiqueta: Etiqueta 2</p>
+            </li>
+            <li class="articulo" data-etiqueta="etiqueta3" data-fecha="2023-09-05" data-numero="3">
+                <h2>Artículo 3</h2>
+                <p>Etiqueta: Etiqueta 3</p>
+            </li>
+            <li class="articulo" data-etiqueta="anime" data-fecha="2023-09-30" data-numero="4">
+                <h2>Artículo 4</h2>
+                <p>Etiqueta: Etiqueta 3</p>
+            </li>
+        </ul>
+        <div class="formular">
+            <div class="search">
+                <div>
+                    <label class="field" for="tag-filter">Etiqueta:</label>
+                    <select class="radius-filter" id="tag-filter">
+                        <option value="todos">Todos</option>
+                        <option value="anime">Anime</option>
+                        <option value="ciencia">Ciencia</option>
+                        <option value="tecnologia">Tecnología</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="field" for="date-filter">Fecha:</label>
+                    <input type="date" class="radius-filter" id="date-filter">
+                </div>
+                <div>
+                    <label for="article-number-filter">Número de Artículo:</label>
+                    <input type="text" class="radius-filter noarticule" id="article-number-filter">
+                </div>
+                <div class="al-right flex ">
+                    <button class="boton .w-sm-100"  onclick="filtrarArticulos()">Filtrar</button>
+                </div>
+            </div>
+        </div>
+        <script src="/js/artic.js"></script>
+
+    </main> 
+    <footer class="footer">
+        <div class="contenedor"></div>
+            <h2 class="titlemain">Contáctame</h2>
+            <div class="foot contenedorfoot">
+                <a href="https://t.me/yoshimakayaba" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/telegram-app.png" alt="telegram-app"/>
+                </a>
+                <a href="https://www.linkedin.com/in/juan-angeles-hern%C3%A1ndez-b55182247/" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/linkedin--v2.png"alt="linkedin--v2" class="social"/>
+                </a>
+                <a href="https://github.com/JohnKun136NVCP" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/github--v1.png" alt="github--v1"/>
+                </a>
+                <a href="https://twitter.com/JohnWilliamBn" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/twitter-circled.png" alt="twitter-circled"/>         
+                </a>
+            </div>
+        </div>
+        <h4>Todos los derechos reservados. @YoshioKeimaKun DevNet</h4>
+    </footer>
+    
+</body>
+</html>
