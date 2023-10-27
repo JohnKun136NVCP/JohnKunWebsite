@@ -70,6 +70,7 @@ h4{
     color: var(--dark);
 }
 
+
 .titlemain span{
     font-family: var(--fontheaders);
     font-size: 2rem;
@@ -90,6 +91,58 @@ h4{
     font-weight: 700;
     color:var(--cyan);
 }
+.contenedor h2{
+    text-align: left;
+    color:var(--teal);
+}
+
+.contenedor p{
+    text-align: justify;
+    font-family: var(--bodyfont);
+    font-size: 2.5rem;
+    line-height: 1.3;
+    padding: 0.3rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
+.contenedor h2{
+    padding: 0.3rem;
+    margin-left: 1rem;
+}
+
+ .artitle-list ol,ul{
+    margin-left: 1.5rem;
+    text-align: justify;
+    color: var(--blue);
+}
+@media (min-width: 760px) {
+    .reference ol{
+        display: grid;
+        /*split 1/n
+        grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-columns: repeat(2,1fr);
+        
+        /*short version
+        grid:200px 800px / 300px 300px;*/
+    }
+}
+
+
+.references {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.references p{
+    color: var(--dark);
+    font-size: 1rem;
+}
+.references a{
+    font-size: 1rem;
+}
+
+
+
 
 h2 .kaomoji{
     font-size: 1.5rem;
@@ -232,7 +285,7 @@ Size of screen Tablet*/
 }
 .containt-hero h2,
 .containt-hero p{
-    color:var(--light);
+    color: var(--white);
     font-weight: bold;
 }
 .localization{
@@ -360,6 +413,32 @@ Size of screen Tablet*/
     float: left;
     transition: opacity 0.5s ease;
 }
+.alignCenter img{
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.videoCenter{
+    position: relative;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-bottom: 56.25%; /* Establece la relación de aspecto (16:9) del video */
+    padding-top: 1rem; /* Espacio adicional arriba del video, opcional */
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.videoCenter iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 
 
 .contenedorText .aboutme__imgR{
