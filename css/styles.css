@@ -98,7 +98,7 @@ h2 .kaomoji{
     background-color: var(--teal);
     color: var(--white);
     padding: 1rem 3rem;
-    margin-top: 4rem;
+    margin-top: 2.5rem;
     font-size: 2rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -200,7 +200,7 @@ Size of screen Tablet*/
     height: 400px;
     position: relative;
     background-position: center center;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
 }
 
 /*No reapeat same image*/
