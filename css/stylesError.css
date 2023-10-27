@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://media3.giphy.com/media/igGApTvcxnJkgzOIVb/giphy.gif?cid=6c09b952ynvtv2rtpd75ngo86se0q84tpbdzsfm3897hrkiu&ep=v1_gifs_search&rid=giphy.gif&ct=g');
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-image: url('https://i.pinimg.com/originals/89/8e/89/898e890558ea37412049ccbd8997de0d.gif');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 120px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #ff6b6b;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: aliceblue;
+    font-family: 'PT Sans', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: aquamarine;
+    font-size: 2.1rem;
+}
+
+.anime-images {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 10px;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.container a{
+    border-color: #ff6b6b;
+    border-radius: 30rem;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+
+    }
+
+    .anime-images img {
+        width: 75px;
+        height: 75px;
+    }
+}
