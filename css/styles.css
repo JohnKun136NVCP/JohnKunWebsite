@@ -390,7 +390,7 @@ Size of screen Tablet*/
 .contenedorText p{
     display: inline;
     line-height: 2.5;
-    font-family:var(--bodyfont); ;
+    font-family:var(--bodyfont);
     text-align: center;
     color: var(--dark);
     transition: opacity 0.5s ease; /* Transición de opacidad */

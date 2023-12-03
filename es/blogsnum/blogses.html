@@ -28,7 +28,7 @@
             <nav class="nav-main contenedor">
                 <a href="/es/index.html">Inicio</a>
                 <a href="/es/aboutmees.html">Acerca de mí</a>
-                <a href="/es/blogses.html">Artículos y proyectos</a>
+                <a href="blogses.html">Artículos y proyectos</a>
                 <a href="/es/contactmees.html">Contacto</a>
             </nav> <!--.nav-main contenedor-->
         </div>
@@ -44,35 +44,41 @@
     </section>
     <main class="contenedor shadow">
         <h2 class="titlemain">Mis artículos</h2>
-        <ul id="articleList" class="containt-fields article-list  ">
-            <li class="articulo" data-tags="anime, ciencia, tecnologia" data-date="2023-10-23" data-numero="1">
-                <h2><a href="blogs/art01/art01.html">Hatsune Miku no es un holograma 🤯</a></h2>
+        <ul id="articleList" class="article-list grid">
+            <li class="articulo" data-tags="anime, ciencia, tecnologia" data-date="2023-10-23" data-numero="1" data-page="1">
+                <h2><a href="../blogs/art/art01.html">Hatsune Miku no es un holograma 🤯</a></h2>
                 <div class="containerTags">
-                    <img  src="https://i.cbc.ca/1.3597213.1580395854!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_940/hatsune-miku.JPG"></div> 
+                    <img   src="https://i.cbc.ca/1.3597213.1580395854!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_940/hatsune-miku.JPG"></div> 
                     <a href="https://www.cbc.ca/news/canada/montreal/hatsune-miku-mtl-1.5445686"><h4>Holographic pop star Hatsune Miku to perform Montreal concert | CBC News</h4></a>
                 </div>
-                <div class="artdescript"><p>¿Alguna vez has ido a un concierto de Hatsune Miku?Si tu respuesta es afirmativa te has preguntado "¿Por qué estoy viendo nada más una pantantalla plana y no es curveada?" La respuesta está en la óptica ¿Te gusataría descubrir cuál es el secreto de Hatsune Miku cada vez que canta y nos deslumbra con su actuación en el escenario?</p></div>
+                <div class="artdescript"><p>¿Alguna vez has ido a un concierto de Hatsune Miku?Si tu respuesta es afirmativa te has preguntado "¿Por qué estoy viendo nada más una pantantalla plana y no es curveada?" La respuesta está en la óptica ¿Te gusataría descubrir cuál es el secreto de Hatsune Miku cada vez que canta y nos deslumbra con su actuación en el escenario?
+                <br>
+                Hatsune Miku es una cantante virtual japonesa creada por Crypton Future Media. Es una de las figuras más populares de la cultura otaku y ha sido apodada como la "Reina del Vocaloid".
+                <br>
+                Miku es una figura controvertida, y una de las principales controversias que la rodea es su naturaleza. Muchos la consideran un holograma, pero esto no es del todo cierto.
+                </p></div>
                 <div class="tag anime">Anime</div>
                 <div class="tag science">Ciencia</div>
                 <div class="tag tecnology">Tecnología </div>
                 <div class="tag date">23/10/23</div>
                 <div class="tag numart">1</div>
-                <div class="tag"> <button class="button" onclick="location.href='blogs/art01/art01.html'">Ir al blog</button></div>
+                <div class="tag"> <button class="button" onclick="location.href='/es/blogs/art/art01.html'">Ir al blog</button></div>
             </li>
-            <li class="articulo" data-tags="tecnologia" data-date="2023-12-02" data-numero="2">
-                <h2><a href="#">🌐 ¡Espejito, Espejito en la Red! 🕵️‍♂️</a></h2>
-                <div class="containerTags">
-                    <img  src="../img/img01/art_02_ids_object3.jpg"><h4>Diagrama del ESP32 con Wireshark</h4></a>
+            <li class="articulo" data-tags="tecnologia" data-date="2023-12-02" data-numero="2" data-page="1">
+                <h2><a href="/es/blogs/art/art02.html">🌐 ¡Espejito, Espejito en la Red! 🕵️‍♂️</a></h2>
+                <div class="containerTags ">
+                    <img  class="shortImages" src="../../img/img01/esp32win.jpg"><h4>Diagrama del ESP32 con Wireshark</h4></a>
                 </div>
                 <div class="artdescript"><p>Este proyecto innovador combina un Sistema de Detección de Intrusiones (IDS) con la potencia de ESP32 y la perspicacia de Wireshark. El ESP32, actuando como el cerebro, monitorea la red en tiempo real, mientras que Wireshark recopila datos detallados sobre la actividad de la red.
-
                 Lo más emocionante es cómo manejamos estos datos: los almacenamos en una base de datos para un análisis exhaustivo y, al mismo tiempo, los enviamos en tiempo real al ESP32. Esta dualidad permite no solo detectar sino también reaccionar activamente ante posibles amenazas.
                     
                 ¡Únete a nosotros en este viaje ciberseguro mientras llevamos la protección de la red al siguiente nivel con el sorprendente IDS Port Mirror! 🔒🌐</p></div>
                 <div class="tag tecnology">Tecnología </div>
                 <div class="tag date">02/12/23</div>
                 <div class="tag numart">2</div>
+                <div class="tag"> <button class="button" onclick="location.href='../blogs/art/art02.html'">Ir al blog</button></div>
             </li>
+            
             <!---
             <li class="articulo" data-etiqueta="etiqueta2" data-fecha="2023-09-03" data-numero="2">
                 <h2>Artículo 2</h2>
@@ -110,9 +116,13 @@
                     <button class="boton .w-sm-100"  id="filterButton">Filtrar</button>
                 </div>
             </div>
+        <div class="center-pagination">
+            <div class="pagination">
+                <button class="active" disabled="disabled">&laquo; Previous</button>
+                <button  onclick="location.href='bloges02.html'" class="active" aria-disabled="true">Next &raquo;</button>
+            </div>
         </div>
         <script src="/js/artic.js"></script>
-
     </main> 
     <footer class="footer">
         <div class="contenedor"></div>

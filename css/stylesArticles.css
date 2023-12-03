@@ -114,6 +114,8 @@ h4{
     margin-left: 1.5rem;
     text-align: justify;
     color: var(--blue);
+    display: flex;
+    flex-wrap: wrap;
 }
 @media (min-width: 760px) {
     .reference ol{
@@ -132,6 +134,7 @@ h4{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .references p{
     color: var(--dark);
@@ -258,10 +261,10 @@ Size of screen Tablet*/
 
 /*No reapeat same image*/
 .a01{
-    background-image: url(../img/img01/hatsune-miku.webp);
+    background-image: url(https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2014_16/331056/hologramsinger.jpg);
 }
-.homeImg{
-    background-image: url(../img/animepeople.jpg);
+.a02{
+    background-image: url(../img/img01/esp32_angel_beat.jpg);
 }
 .contactmeImg{
     background-image: url(../img/animegirl.jpg);
@@ -448,9 +451,89 @@ Size of screen Tablet*/
 }
 .contenedorText p{
     display: inline;
-    line-height: 2.5;
+    line-height: 1.5;
     font-family:var(--bodyfont); ;
     text-align: center;
     color: var(--dark);
     transition: opacity 0.5s ease; /* Transición de opacidad */
+}
+/*Code by: https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp */
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+ /* Create four equal columns that sits next to each other */
+.column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+table {
+    width: 90%;
+    margin-top: 20px;
+    padding: 1rem;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x:auto;
+}
+td {
+    border: 1px solid #ddd;
+    text-align: center;
+}
+.image-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+/*Botton UP*/
+#myBtn{
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 30px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden; 
+    outline: none;
 }
