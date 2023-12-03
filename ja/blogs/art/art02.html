@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;900&&family=Rubik+Iso&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/css/stylesArticles.css"as="style">
+    <link rel="icon" type="image/x-icon" href="/img/iaicon.ico">
+    <link href="/css/stylesArticles.css" rel="stylesheet">
+    <link href="/css/normalize.css" href="/css/normalize.css"as="style">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>🌐 ミラー、ミラー、ネットの中で！ 🕵️‍♂️ ESP32とWiresharkを使用した驚異的なIDS Port Mirrorプロジェクトを発見 🔍📊</title>
+    <meta name="description" content="A guy with expectation of his life. In other words, talking about myself and my work. (～￣▽￣)～">
+    <meta name="keyworkds" content="netdeveloper, anime, blogs of science, blogs of anime,my live, cv, github,search me, projects,anime,science,software,developer,physicist, engineer,yoshiko,keima,kun,me">
+    <meta name="author" content="JohnKun136NVCP">
+</head>
+
+<body>
+    <header class="headerImg">
+        <h1 class="titlemain">Yoshio <span> Keima</span> </h1>
+    
+        <div class="nav-bg">
+            <nav class="nav-main contenedor">
+                <a href="/ja/index.html">ホーム</a>
+                <a href="/ja/aboutmejp.html">私について</a>
+                <a href="/ja/blogsnum/blogsjp.html">アーティキュールとプロジェクト</a>
+                <a href="/ja/contactmejp.html">連絡先</a>
+            </nav> <!--.nav-main contenedor-->
+        </div>
+    </header>
+    <section class="hero a02">
+        <div class="containt-hero">
+            <h2> 🌐 ミラー、ミラー、ネットの中で！ 🕵️‍♂️</h2>
+            <div class="localization">
+                <p>第2条 日付：2023年12月02日</p>
+            </div><!--.localization-->
+            <button onclick="topFunction()" id="myBtn" title="#"><img src="https://img.icons8.com/bubbles/50/000000/long-arrow-up.png"width="60px"/></button>
+        </div><!--.containt-hero-->
+    </section>
+    <main class="contenedor shadow">
+        <h1>🌐 ミラー、ミラー、ネットの中で！ 🕵️‍♂️ ESP32とWiresharkを使用した驚異的なIDS Port Mirrorプロジェクトを発見 🔍📊</h1>
+        <p>
+            主なインデックス：
+        </p>
+        <div class="artitle-list">
+            <ol>
+                <li><p><a href="#top1">IDSとは何ですか？</a></p></li>
+                <li><p><a href="#top2">Wiresharkとは何ですか？</a></p></li>
+                <li><p><a href="#top3">IDSポートミラーとは？</a></p></li>
+                <li><p><a href="#top4">PythonとShellScript</a></p></li>
+                <li><p><a href="#top5">クライアントサーバアーキテクチャ</a></p></li>
+                <li><p><a href="#top6">これまでのプロジェクト</a></p></li>
+                <li><p><a href="#top7">結論</a></p></li>
+                <li><p><a href="#top8">謝辞</a></p></li>
+                <li><p><a href="#top9">参考</a></p></li>
+            </ol>
+        </div>
+        <h2> 1. IDSとは何ですか？<a id="top1"></a></h2>
+        <p>
+            IBMのウェブサイトによると、IDSとは<i>Intrusion Detection System</i>（侵入検知システム）のこと。トラフィックを監視するネットワーク・ツールで、<b>悪意</b>のある活動や<b>不審</b>な活動を行う可能性のあるデバイス、セキュリティ・ポリシーに違反する可能性のあるデバイスを監視することができます<a href="#top9">[2]</a>。</p>
+        <div class="alignCenter">
+            <img  class="aboutme__imgC" src="https://study-ccna.com/wp-content/uploads/IDS.png"> <h4><a>Firewalls, IDS, and IPS Explanation and Comparison |Study CCNA</a></h4>
+        </div> 
+        <p>その主な機能はネットワーク・トラフィックの分析で、既知の攻撃のシグネチャーや、異常な、あるいは不審な挙動と比較される。この種の分析には、ポート・スキャン、中断された、あるいは不正なパケットなどがある。欠点は、それ自体では侵入者パケットを阻止できないことだが、幸いなことに、パケットブロッカーとしても機能するファイアウォールが内蔵されています <a href="#top9">[2]</a>。</p>
+        <p>
+            例えば、NIDS（<i>Network Intrusion Detection Syste</i>：ネットワーク侵入検知システム）は、ファイアウォールの背後に設置され、パケットがファイアウォールを通過した場合、NIDSがそれをブロックするのが主な機能である。HIDS（<i>ホスト侵入検知システム</i>）は、主に特定のモデムやラップトップ、ルーター、サーバーなどのエンドポイントにインストールされる。HIDSはそれだけでデバイス上のアクティビティを監視します<a href="#top9">[1][2][5]</a>。
+        </p>
+        <h2>2. Wiresharkとは何ですか？<a id="top2"></a> </h2>
+        <p>
+            WiresharkはIDSのように動作し、この場合はプロトコルを分析し、通信ネットワークの問題を解決します。グラフィカルなインターフェースを持ち、簡単な方法で情報をフィルタリングし、イーサネット、SSH、WIFIなどのネットワークを分析することができます。コマンドライン版のtsharkもあります<a href="#top9">[3]</a>。 
+        </p>
+        <div class="alignCenter">
+            <img  class="aboutme__imgC" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wireshark_icon.svg/1280px-Wireshark_icon.svg.png"> <h4><a>Wireshark Icon | Wikipedia</a></h4>
+        </div>
+        <h2>3. IDSポートミラーとは？<a id="top3"></a></h2>
+        <p>
+            IDS Port Mirrorは主にネットワーク分析に関するプロジェクトで、いくつかのソフトウェアとハードウェアツールを使ってIDSとして動作する。ESP32は実質的にマイクロコントローラーであり、内部サーバー（ローカル）、WIFI、Telegramへのメッセージ送信など、多くの機能を持つことができる。これを行うには、ESP32のメモリが限られていることを言及する価値がある、その代わりにWiresharkのようなIDSとして動作するのではなく、1つであるように見せかけるだけである、あなたはそれがHIDSであると言うことができる、しかし、操作はここだけでは終わりません。トラフィックファイルを.csvでエクスポートすることができるWiresharkの助けを借りて、PythonとShellScriptの助けを借りて、3つのLED（赤、黄、緑）とブザー（ミニホーンのようなもの）を備えたプロトボードに送信されたメッセージを受信することも可能で、ネットワークの高いログに関するメール（GMAIL）を送信し、Telegram（ボット<a href="https://t.me/Esp32ScanNetworkbot">Esp32NetworkTool</a>を使用）に通知を送信することもできた。最後に、作成されたログの時間比較を見るために、 <a href="https://www.iim.unam.mx/inicio.html"> Instituto de Materiales de la UNAM (IIM – UNAM)</a>のページにPHPを使ってクエリ用のデータベースをリモートで実装した。管理者としてログインすることで、トラフィックを可視化することができる。それぞれの機能は以下の表の通りです：
+        </p>
+        <table>
+            <tr>
+              <td>
+                    <b>コンポーネント</b>
+              </td>
+              <td>
+                    <b>PIN - GPIO</b>
+              </td>
+              <td>
+                    <b>機能性</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                    <b>LED <font color="#FF0000">赤色</font></b>
+              </td>
+              <td>
+                    <b>26</b>
+              </td>
+              <td>
+                    <b><i>電源を入れてからGmailでネットワーク管理者にメールを送ると、Telegramから通知が届く。最後に、ブザーがアラームのように一瞬鳴ります。</i></b>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>LED <font color="#FFFE00">黄色</font></b>
+                </td>
+                <td>
+                    <b>27</b>
+                </td>
+                <td>
+                    <b><i>オンの場合、Telegramのみが通知を送信します。</i></b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>LED <font color="#00FF28">緑色</font></b>
+                </td>
+                <td>
+                    <b>14</b>
+                </td>
+                <td>
+                    <b><i>不審な動きがない場合にのみLEDが点灯するようになりました。</i></b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>BUZZER</b>
+                </td>
+                <td>
+                    <b>17</b>
+                </td>
+                <td>
+                    <b><i>LEDが赤になると音が出ます。</i></b>
+                </td>
+            </tr>
+          </table>
+        <div class="alignCenter">
+            <img src="../../../img/img01/ids-protoboard.jpg">
+            <h4><a>プロトボードの配列。</a></h4>
+        </div>
+        <div class="alignCenter">
+            <img src="../../../img/img01/idsloggin.jpg">
+            <h4><a>ログインページ。</a></h4>
+        </div>
+        <h2>4. PythonとShellScript<a id="top4"></a></h2>
+        <div class="alignCenter">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230317111256/Is-Bash-Script-Better-Than-Python.jpg">
+            <h4><a>Is Bash Script Better Than Python? | GeeksforGeeks</a></h4>
+        </div>
+        <p>Pythonはプログラミングを始めたばかりの人にとって柔軟なプログラミング言語だが、Pythonですべての作業を行うことはできない。ESP32に実装されたIDSでは、（MicroPythonでフィルムウェアを改造しない限り）PythonはESP32より一点劣る。MetasPloitのようにターミナルからデータを取得して実行するには、Linuxオペレーティングシステムが持っているプログラミング言語のようなものであるShellScriptの助けがある。セキュリティとネットワーキングの分野で私のお気に入りのYoutuberの一人が、ShellScriptとPythonについてのビデオをいくつか残してくれました。</p>
+
+        <div class="videoCenter">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/SPwyp2NG-bE?si=K0ndUVMkjIxrN7LB" title="YouTube video player" frameborder="0" ></iframe>
+        </div>
+        <br>
+        <div class="videoCenter">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mRMmlo_Uqcs?si=dTQz1nzuMUYB6gXc" title="YouTube video player" frameborder="0" ></iframe>
+        </div>
+        <h2>5. クライアントサーバアーキテクチャ<a id="top5"></a></h2>
+        <div class="alignCenter">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/1200px-Client-server-model.svg.png">
+            <h4><a>Client–server model | Wikipedia</a></h4>
+        </div>
+        <p>
+            このモデルは、サーバーと呼ぶサービスと、クライアントと呼ぶリクエスト元との間の通信で構成されている。クライアントは他のプログラムに対してリクエストを行い、サーバーはレスポンスを返します<a href="#top9">[4]</a>。例えば、Googleで子猫を検索し、あるページをクリックすると、その子猫を見ることができる。このモデルを簡単に説明する。IDSでは、4つのサービス（Gmail、Telegram、サーバー（ESP32）、ウェブ・サーバー）とクライアント間の通信を維持した。
+        </p>
+        <h2>6. これまでのプロジェクト<a id="top6"></a></h2>
+        <p>
+            このプロジェクトだけでなく、<a href="https://github.com/spacehuhn/ArduinoPcap/">ArduinoPcap</a>のように外部ソフトウェアなしでESP32を改造し、IDSとして機能させることができた人もいました。
+        </p>
+        <div class="videoCenter">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/3Ac6X6ZBQ0g?si=8r-VWQ6xa5YYgsAl" title="YouTube video player" frameborder="0" ></iframe>
+        </div>
+        <h2>7. 結論<a id="top7"></a></h2>
+        <p>
+            結論として、IDSは、あなたが分析したいときの情報のトラフィックのための優れた選択肢であり、このプロジェクトは、ミラーポートとして動作し、この場合、それはスイッチを持っていませんが、それは1つを持っているコンピュータでシミュレートし、トラフィックがESP32を持っているIPによってフィルタリングされ、また、コンピュータがそれと対話するサーバーにリモート接続することによって、同様に、後で視覚化することができ、単純なベースでデータを充填しに行く。より詳細なプロジェクトをご覧になりたい場合は、<a href="https://github.com/JohnKun136NVCP/TSEeI-IoT/tree/main/IntroduccionIoT/Proyecto">IDS Port Mirror</a>を含むリポジトリをご覧ください。このプロジェクトが気に入ったら、リポジトリに🌟をつけてください。
+        </p>
+        <div class="alignCenter">
+            <img src="../../../img/img01/LogoSecurity.jpg">
+            <br>
+            <img src="https://i.pinimg.com/originals/a8/a2/28/a8a2282303974a457c3624925675a890.gif">
+            <h4><a href="https://github.com/JohnKun136NVCP/TSEeI-IoT/tree/main/IntroduccionIoT/Proyecto">1.ロゴのデザインは、AIを使って『エンジェルス・ビーツ！』のユーリとエンジェルをイメージした。</a> </h4>
+            <h4><a>2.Angel Beats! | Nakamura Yuri | Tachibana Kanade | Pinterest. </a> </h4>
+        </div>
+        <div class="alignCenter">
+            
+            <h4> </h4>
+        </div>
+        <h2>8. 謝辞<a id="top8"></a></h2>
+        <table>
+            <tr>
+              <td>
+                <div class="image-container">
+                    <a href="https://github.com/JohnKun136NVCP" target="_blank" rel="noreferrer noopener"> <img src="https://avatars.githubusercontent.com/u/73410627?v=4" width="60px" alt="Imagen 1"></a>
+                  </div>
+              </td>
+              <td>
+                  <div class="image-container">
+                    <a href="https://github.com/AndroCM">
+                      <img src="https://avatars.githubusercontent.com/u/90354603?v=4" alt="Imagen 6" width="60px"></a>
+                </div>
+              </td>
+              <td>
+                <div class="image-container">
+                  <a href="https://www.iim.unam.mx/opompa.html">
+                  <img src="https://img.icons8.com/external-itim2101-lineal-color-itim2101/60/external-administrator-devices-service-itim2101-lineal-color-itim2101.png" alt="external-administrator-devices-service-itim2101-lineal-color-itim2101" alt="Img admin" width="60px"></a>
+                </div>
+              </td>
+              <td>
+                <div class="image-container">
+                    <a href="https://github.com/AlejoCM03">
+                  <img src="https://avatars.githubusercontent.com/u/126348226?v=4" alt="Imagen 2" width="60px"></a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="image-container">
+                    <a href="https://github.com/se2510">
+                  <img src="https://avatars.githubusercontent.com/u/31011998?v=4" alt="Imagen 5"width="60px"></a>
+                </div>
+              </td>
+              <td>
+                <div class="image-container">
+                    <a href="https://github.com/Xianya24">
+                    <img src="https://avatars.githubusercontent.com/u/150436667?v=4" width="60px" alt="Imagen 4" width="60px"></a>
+                </div>
+              </td>
+              <td>
+                <div class="image-container">
+                  <a href="https://mx.linkedin.com/in/oscar-alejandro-luna-cruz-1b9b48120">
+                  <img src="https://img.icons8.com/external-itim2101-lineal-color-itim2101/60/external-administrator-devices-service-itim2101-lineal-color-itim2101.png" alt="external-administrator-devices-service-itim2101-lineal-color-itim2101"  alt="Img admin" width="60px"></a>
+                </div>
+              </td>
+            </tr>
+          </table>
+        <h2>9. 参考<a id="top9"></a></h2>
+        <div class="reference">
+            <ol class="references">
+                <li><p>侵入検知システム(IDS)とは何ですか? IBM. アクセス日時： 2023年11月10日15:00 <a href=" https://www.ibm.com/topics/intrusion-detection-system"> 侵入検知システム(IDS)とは何ですか?</a>より</p></li>
+                <li><p>侵入検知システム (2023年7月7日). ウィキペディア、フリー百科事典。アクセスした： 2023年10月7日18:11 <a href=" https://es.wikipedia.org/w/index.php?title=Sistema_de_detecci%C3%B3n_de_intrusos&oldid=152325850">侵入検知システム</a>より </p></li>
+                <li><p>Wireshark (2023, 17 November).ウィキペディア (Wikipedia): フリー百科事典。アクセス日時: 2023年11月17日 21:22 <a href="https://es.wikipedia.org/w/index.php?title=Wireshark&oldid=155447759">Wireshark.</a>より</p></li>
+                <li><p>クライアントサーバモデル （2023年10月20日）。ウィキペディア (Wikipedia): フリー百科事典。アクセス日時: 2023年10月20日23:05 <a href="https://es.wikipedia.org/w/index.php?title=Cliente-servidor&oldid=154755199">クライアントサーバモデル</a>より  </p></li>
+                <li><p>Cisco IDS/IPS Fundamentals (2020, 15 February). The Cisco Learning Network アクセス日時：2023年11月31日19:00  <a href="https://learningnetwork.cisco.com/s/question/0D53i00000KsuxDCAR/cisco-idsips-fundamentals">Cisco IDS/IPS Fundamentals</a>より </p></li>
+            </ol>
+        </div>   
+    </main> 
+    <footer class="footer">
+        <div class="contenedor"></div>
+            <h2 class="titlemain">連絡先</h2>
+            <div class="foot contenedorfoot">
+                <a href="https://t.me/yoshimakayaba" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/telegram-app.png" alt="telegram-app"/>
+                </a>
+                <a href="https://www.linkedin.com/in/juan-angeles-hern%C3%A1ndez-b55182247/" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/linkedin--v2.png"alt="linkedin--v2" class="social"/>
+                </a>
+                <a href="https://github.com/JohnKun136NVCP" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/github--v1.png" alt="github--v1"/>
+                </a>
+                <a href="https://twitter.com/JohnWilliamBn" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/twitter-circled.png" alt="twitter-circled"/>         
+                </a>
+            </div>
+        </div>
+        <h4>無断転載を禁じます。@YoshioKeimaKun DevNet</h4>
+    </footer>
+    <script src="/js/botton.js"></script>
+</body>
+</html>
