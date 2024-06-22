@@ -205,16 +205,16 @@ Size of screen Tablet*/
 
 /*No reapeat same image*/
 .aboutmeImg{
-    background-image: url(../img/animegirl3.jpg);
+    background-image: url(../img/animegirl3.webp);
 }
 .homeImg{
-    background-image: url(../img/animepeople.jpg);
+    background-image: url(../img/animepeople.webp);
 }
 .contactmeImg{
-    background-image: url(../img/animegirl.jpg);
+    background-image: url(../img/animegirl.webp);
 }
 .blogImg{
-    background-image: url(../img/animegirl2.jpg);
+    background-image: url(../img/animegirl2.webp);
 }
 
 
@@ -328,9 +328,6 @@ Size of screen Tablet*/
         grid-column: 1/3;
     }
 }
-
-
-
 
 .field{
     margin-bottom: 1rem;
