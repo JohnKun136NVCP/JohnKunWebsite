@@ -1,29 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
+    <meta name="google-site-verification" content="ii25II9IdLP1lSIOn3oxzGTJWh5QdX47kSsflrIHsAM" />
+    <meta name="msvalidate.01" content="4C23042BF6E51BE0F57DF26A03EE74EA" />
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;900&&family=Rubik+Iso&display=swap" rel="stylesheet">
-    <link rel="preload" href="css/styles.css"as="style">
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/normalize.css" href="css/normalize.css"as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/css/styles.css"as="style">
+    <link rel="icon" type="image/x-icon" href="/img/iaicon.ico">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/normalize.css" href="/css/normalize.css"as="style">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>YoshioKeimaWebsite</title>
+    <meta name="description" content="A guy with expectation of his life. In other words, talking about myself and my work. (～￣▽￣)～">
+    <meta name="keyworkds" content="netdeveloper, anime, blogs of science, blogs of anime,my live, cv, github,search me, projects,anime,science,software,developer,physicist, engineer,yoshiko,keima,kun,me">
+    <meta name="author" content="JohnKun136NVCP">
+    <script>
+        let lang = window.navigator.languages ? window.navigator.languages[0] : null;
+        lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
+        let shortLang = lang;
+        if (shortLang.indexOf('-') !== -1)
+            shortLang = shortLang.split('-')[0];
+        if (shortLang.indexOf('_') !== -1)
+            shortLang = shortLang.split('_')[0];
+        if(shortLang === 'es-419')
+            window.location.replace('../' + shortLang + '/index.html');
+        if(shortLang === 'en-US')
+            console.log(shortLang)
+            window.location.replace('/' + shortLang + '/index.html');
+        if(shortLang === 'ja-JP')
+            console.log(shortLang)
+            window.location.replace('../' + shortLang + '/index.html');
+    </script>
 </head>
 <body>
-    <header>
+    <header class="headerImg">
         <h1 class="titlemain">Yoshio <span> Keima</span> </h1>
+    
+        <div class="nav-bg">
+            <nav class="nav-main contenedor">
+                <a href="/en/index.html">Home</a>
+                <a href="/en/aboutme.html">About me</a>
+                <a href="/en/blogs.html">Articles and projects</a>
+                <a href="/en/contactme.html">Contact</a>
+            </nav> <!--.nav-main contenedor-->
+        </div>
     </header>
-    <div class="nav-bg">
-        <nav class="nav-main contenedor">
-            <a href="html/home.html">Home</a>
-            <a href="html/aboutme.html">About me</a>
-            <a href="html/blogs.html">Projects</a>
-            <a href="html/contactme.html">Contact</a>
-        </nav> <!--.nav-main contenedor-->
-    </div>
-    <section class="hero">
+    <section class="hero homeImg">
         <div class="containt-hero">
             <h2>Software developer and cybersecurity analyst</h2>
             <div class="localization">
@@ -65,54 +91,25 @@
                 <p>My personal blog is a digital space where I share insights, experiences, and perspectives on topics like networks, anime series,and my projects actually I'm working.</p>
             </section>
         </div><!--.services-->
-        <section>
-            <h2>Contact</h2>
-            <form class="forms">
-                <fieldset>
-                    <legend>If you have any suggestion please let me know </legend>
-                    <div class="containt-fields">
-                        <div class="field">
-                            <label>Name</label>
-                            <input class="input-text" type="text" placeholder="Your name">
-                        </div>
-                        <div class="field">
-                            <label>Telegram</label>
-                            <input class="input-text" type="text" placeholder="Your telegram. If you don't have, type 'none'">
-                        </div>
-                        <div class="field">
-                            <label>Email</label>
-                            <input class="input-text" type="email" placeholder="Your email">
-                        </div>
-                        <div class="field">
-                            <label>Message</label>
-                            <textarea class="input-text"></textarea>
-                        </div>
-                        <div class="al-right flex">    
-                            <input class="boton .w-sm-100" type="submit" value="Send">
-                        </div>
-                    </div><!--.containt.fields-->
-                </fieldset>
-            </form>
-        </section>
     </main> 
-    <section>
-        <h2 class="titlemain">Contact me</h2>
-        <div class="foot contenedorfoot">
-        <a href="https://t.me/yoshimakayaba" target="_blank" rel="noreferrer noopener">
-            <img width="45" height="45" src="https://img.icons8.com/doodle/48/telegram-app.png" alt="telegram-app"/>
-        </a>
-        <a href="https://www.linkedin.com/in/juan-angeles-hern%C3%A1ndez-b55182247/" target="_blank" rel="noreferrer noopener">
-            <img width="45" height="45" src="https://img.icons8.com/doodle/48/linkedin--v2.png"alt="linkedin--v2" class="social"/>
-        </a>
-        <a href="https://github.com/JohnKun136NVCP" target="_blank" rel="noreferrer noopener">
-            <img width="45" height="45" src="https://img.icons8.com/doodle/48/github--v1.png" alt="github--v1"/>
-        </a>
-        <a href="https://twitter.com/JohnWilliamBn" target="_blank" rel="noreferrer noopener">
-            <img width="45" height="45" src="https://img.icons8.com/doodle/48/twitter-circled.png" alt="twitter-circled"/>         
-        </a>
-    </div>
-    </section>
-    <footer>
+    <footer class="footer">
+        <div class="contenedor"></div>
+            <h2 class="titlemain">Contact me</h2>
+            <div class="foot contenedorfoot">
+                <a href="https://t.me/yoshimakayaba" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/telegram-app.png" alt="telegram-app"/>
+                </a>
+                <a href="https://www.linkedin.com/in/juan-angeles-hern%C3%A1ndez-b55182247/" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/linkedin--v2.png"alt="linkedin--v2" class="social"/>
+                </a>
+                <a href="https://github.com/JohnKun136NVCP" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/github--v1.png" alt="github--v1"/>
+                </a>
+                <a href="https://twitter.com/JohnWilliamBn" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/twitter-circled.png" alt="twitter-circled"/>         
+                </a>
+            </div>
+        </div>
         <h4>All rights reserved. @YoshioKeimaKun DevNet</h4>
     </footer>
 </body>

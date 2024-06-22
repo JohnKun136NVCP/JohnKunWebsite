@@ -22,6 +22,10 @@
     --danger: #dc3545;
     --light: #f8f9fa;
     --dark: #343a40;
+    --fontheaders:'Noto Sans JP', sans-serif;
+    --bodyfont: 'PT Sans', sans-serif;
+    --hentaiganafont:'Yuji Hentaigana Akari', cursive;
+
 }
 
 /*Globales*/
@@ -34,7 +38,6 @@ html{
 *, *:before, *:after {
     box-sizing: inherit;
 }
-
 body{
     font-size: 16px; /*1rem  = 10px*/
     background-image: linear-gradient(to up,#20c997 0% ,var(--cyan) 100%);/*gradient down to up*/
@@ -57,32 +60,45 @@ h4{
 
 h1,h2,h3{
     text-align: center;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--fontheaders);
     color: var(--titles);
 }
 
 h4{
     text-align: center;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: var(--blue);
+    font-family: var(--fontheaders);
+    color: var(--dark);
 }
 
 .titlemain span{
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--fontheaders);
     font-size: 2rem;
     color: var(--orange);
 }
+
+.center-text{
+    text-align: center;
+}
 .contenedor{
     max-width: 120rem;
+    width: 90%;
     margin: 0 auto;
- }
+    width: min(90%,120rem);
+}
+.contenedor a{
+    text-decoration: none;
+    font-weight: 700;
+    color:var(--cyan);
+}
 
-
+h2 .kaomoji{
+    font-size: 1.5rem;
+}
 .boton{
     background-color: var(--teal);
     color: var(--white);
     padding: 1rem 3rem;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     font-size: 2rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -90,7 +106,7 @@ h4{
     border-radius: .5rem;
     width: 90%;
     text-align: center;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--fontheaders);
     border: none;
 }
 
@@ -113,6 +129,14 @@ h4{
 }
 @media (min-width: 780px) {
     .w-sm-100{
+        width: auto;
+    }
+}
+.w-sm-25{
+    width: 5%;
+}
+@media (min-width: 780px) {
+    .w-sm-25{
         width: auto;
     }
 }
@@ -171,17 +195,33 @@ Size of screen Tablet*/
 }
 
 .hero {
-    background-image: url(../img/animepiano2.jpg);
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /*Doesnt repeat same picture*/
     background-size: cover;
     height: 400px;
     position: relative;
-    margin-bottom: 2rem;
+    background-position: center center;
+    margin-bottom: 0rem;
 }
+
+/*No reapeat same image*/
+.aboutmeImg{
+    background-image: url(../img/animegirl3.webp);
+}
+.homeImg{
+    background-image: url(../img/animepeople.webp);
+}
+.contactmeImg{
+    background-image: url(../img/animegirl.webp);
+}
+.blogImg{
+    background-image: url(../img/animegirl2.webp);
+}
+
+
 .containt-hero {
     position:absolute;
     background-color: rgba(0,0,0,0.7);/*Trnasparencia rgba*/
-    background-color: rbg(0 0 0 / 70%);
+    /*background-color: rbg(0 0 0 / 70%);*/
     width: 100%;
     height: 100%;
     /*align vertical and horizontally */
@@ -199,15 +239,25 @@ Size of screen Tablet*/
     display: flex;
     align-items: flex-end;
 }
-/*Scroll snap*/
+/*Scroll snap
 .services,
 .nav-main,
-.forms,
+.formular,
 .foot{
     scroll-snap-align: center;
     scroll-snap-stop: always;
 }
 
+.contenedorText,
+.footer,
+.titlemain,
+.service,
+.formular,
+.headerImg
+{
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}*/
 /**services**/
 @media (min-width: 760px) {
     .services{
@@ -227,8 +277,9 @@ Size of screen Tablet*/
     align-items: center;
 }
 .service p{
-    line-height: 1.5;
+    line-height: 1.3;
     text-align: center;
+    font-family: var(--bodyfont);
 }
 .service h2{
     color:var(--blue);
@@ -243,13 +294,12 @@ Size of screen Tablet*/
     justify-content: space-evenly;
     align-items: center;
 }
-
 /*Contact*/
 .forms{
     background-color: rgba(255, 165, 0, 0.637);
     width: min(60rem,100%);/*use little value*/
     margin: 0 auto;
-    padding: 2rem;
+    padding: 4rem;
     border-radius: 2rem;
     
 }
@@ -284,7 +334,7 @@ Size of screen Tablet*/
 }
 
 .field textarea{
-    height: 20rem;
+    height: 9rem;
 }
 
 .field label{
@@ -302,4 +352,268 @@ Size of screen Tablet*/
 }
 .footer{
     text-align: center;
+}
+
+/**About ME*/
+@media (min-width: 760px) {
+    .services-aboutme{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2rem;
+    }
+}
+
+.contenedorText{
+    padding: 1rem;
+    max-width: 120rem;
+    margin-bottom: 12rem;
+}
+
+
+.contenedorText .aboutme__imgL{
+    width: 250px;
+    margin: 30px 30px 30px 0;
+    float: left;
+    transition: opacity 0.5s ease;
+}
+
+
+.contenedorText .aboutme__imgR{
+    width: 250px;
+    margin: 30px 30px 30px 0;
+    float: right;
+}
+
+.contenedorText p{
+    display: inline;
+    line-height: 2.5;
+    font-family:var(--bodyfont);
+    text-align: center;
+    color: var(--dark);
+    transition: opacity 0.5s ease; /* Transición de opacidad */
+}
+/*Botton for up to header*/
+#myBtn{
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 30px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden; 
+    outline: none;
+}
+/*Scroll Imagenes Framework*/
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+}
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/*Span japanese styles*/
+.titlemain .japanstyle{
+    font-family: var(--hentaiganafont);
+    color: var(--cyan);
+}
+
+/*animations on aboutme*/
+.scroll-image {
+    max-width: 100%;
+    height: auto;
+    opacity: 0; /* Inicialmente invisible */
+  }
+.image-visible {
+    opacity: 1; /* Hacer visible cuando se activa la clase */
+}
+/*text*/
+.scroll-text {
+    opacity: 0; /* Inicialmente invisible */
+  }
+  
+.text-visible {
+    opacity: 1; /* Hacer visible cuando se activa la clase */
+}
+/*BLOG SECTION*/
+/*Search*/
+.search{
+    background-color: rgba(42, 230, 255, 0.719);
+    width: min(60rem,100%);/*use little value*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+.search  fieldset{
+    border: none;
+}
+
+
+
+.search legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--titles);
+}
+@media (min-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 9rem;
+        column-gap: 1rem;
+
+        /*min-width*/
+        .field {
+            min-width: 200px;
+        }
+    }
+}
+
+/* Estilos para la lista de artículos */
+ul.article-list {
+    list-style: none;
+    padding: 0;
+}
+
+ul.article-list li {
+    border: 0.4rem solid var(--teal);
+    border-radius: 2rem;
+    margin: 10px;
+    padding: 10px;
+    display: block;
+}
+
+/* Oculta los artículos inicialmente */
+.articulo {
+    display: none;
+}
+.artdescript p{
+    line-height: 1.3;
+    text-align: justify;
+    font-family: var(--hentaiganafont);
+}
+
+/*Pages numbers*/
+/*Code by W3Schools*/
+
+.center-pagination{
+    text-align: center;
+    padding-top: 2.5rem;
+}
+.pagination {
+    display: inline-block;
+}
+  .pagination {
+    display: inline-block;
+  }
+  
+  .pagination button {
+    color: var(--blue);
+    border-radius: 5px;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    margin: 0 4px;
+  }
+  
+  .pagination a.active {
+    background-color: var(--cyan);
+    color: white;
+    border-radius: 5px;
+    border: 1px solid var(--cyan);
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}
+
+/*TAGS*/
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.tag.anime {
+    background-color: var(--red);
+    color: var(--white);
+    border-radius: 2rem;
+    align-items: left;
+    border: 1px solid var(--red);
+}
+.tag.science {
+    background-color: var(--cyan);
+    color: white;
+    border-radius: 2rem;
+    border: 1px solid var(--cyan);
+}
+.tag.tecnology {
+    background-color: var(--green);
+    color: white;
+    border-radius: 2rem;
+    border: 1px solid var(--green);
+}
+.tag.date{
+    background-color: var(--indigo);
+    color: white;
+    border-radius: 2rem;
+    border: 1px solid var(--indigo);
+}
+.tag.numart{
+    background-color: var(--teal);
+    color: white;
+    border-radius: 2rem;
+    border: 1px solid var(--teal);
+}
+.tag .button{
+    background-color: var(--pink);
+    color: var(--white);
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 3px;
+    text-transform: none;
+    border-radius: 10px;
+    font-size: 14px;
+    border: 1px solid var(--pink);
+    cursor: pointer;
+}
+.containerTags{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerTags img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.containerTags a,h4{
+    color:var(--dark);
+    font-size: 1rem;
+}
+.radius-filter{
+    width: 13rem;
+    border-radius: 1rem;
+}
+.noarticule {
+    width: 3rem;
+    border-radius: 1rem;
 }
