@@ -1,0 +1,30 @@
+name: Merge Main into All Branches
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 */6 *' # Every 6 months
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Git user
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #run: |
+          #git config --local user.email "actions@github.com"
+          #git config --local user.name "Github Actions"
+      - name: Fetch all branches
+        run: |
+          git fetch --unshallow
+          git fetch --all
+      - name: List branches
+        run: |
+          git branch -r | grep -v 'main' | sed 's/origin\///' > branches.txt
+      - name: Merge main into branches
+        run: |
+          while read -r branch; do
+            git checkout "$branch"
+            git pull
+            git merge --no-ff main -m "Auto-merge main into $branch" 
+            git push
+          done < branches.txt
