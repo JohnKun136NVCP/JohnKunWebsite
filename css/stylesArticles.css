@@ -1,0 +1,533 @@
+:root{
+    --titles: #900C3F;
+    --subtitles:#C70039;
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --fontheaders:'Noto Sans JP', sans-serif;
+    --bodyfont: 'PT Sans', sans-serif;
+    --hentaiganafont:'Yuji Hentaigana Akari', cursive;
+
+}
+
+/*Globales*/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /*Hack Box model*/
+    scroll-snap-type: y mandatory;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    font-size: 16px; /*1rem  = 10px*/
+    background-image: linear-gradient(to up,#20c997 0% ,var(--cyan) 100%);/*gradient down to up*/
+}
+
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h4{
+    font-size: 1.5rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+    font-family: var(--fontheaders);
+    color: var(--titles);
+}
+
+h4{
+    text-align: center;
+    font-family: var(--fontheaders);
+    color: var(--dark);
+}
+
+
+.titlemain span{
+    font-family: var(--fontheaders);
+    font-size: 2rem;
+    color: var(--orange);
+}
+
+.center-text{
+    text-align: center;
+}
+.contenedor{
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+    width: min(90%,120rem);
+}
+.contenedor a{
+    text-decoration: none;
+    font-weight: 700;
+    color:var(--cyan);
+}
+.contenedor h2{
+    text-align: left;
+    color:var(--teal);
+}
+
+.contenedor p{
+    text-align: justify;
+    font-family: var(--bodyfont);
+    font-size: 2.5rem;
+    line-height: 1.3;
+    padding: 0.3rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
+.contenedor h2{
+    padding: 0.3rem;
+    margin-left: 1rem;
+}
+
+ .artitle-list ol,ul{
+    margin-left: 1.5rem;
+    text-align: justify;
+    color: var(--blue);
+    display: flex;
+    flex-wrap: wrap;
+}
+@media (min-width: 760px) {
+    .reference ol{
+        display: grid;
+        /*split 1/n
+        grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-columns: repeat(2,1fr);
+        
+        /*short version
+        grid:200px 800px / 300px 300px;*/
+    }
+}
+
+
+.references {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.references p{
+    color: var(--dark);
+    font-size: 1rem;
+}
+.references a{
+    font-size: 1rem;
+}
+
+
+
+
+h2 .kaomoji{
+    font-size: 1.5rem;
+}
+.boton{
+    background-color: var(--teal);
+    color: var(--white);
+    padding: 1rem 3rem;
+    margin-top: 4rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    font-family: var(--fontheaders);
+    border: none;
+}
+
+@media (min-width: 480px) {
+    .boton{
+        width: auto;
+    }
+}
+.boton:hover{
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+}
+/*Sizes*/
+.w-sm-100{
+    width: 100%;
+}
+@media (min-width: 780px) {
+    .w-sm-100{
+        width: auto;
+    }
+}
+.w-sm-25{
+    width: 5%;
+}
+@media (min-width: 780px) {
+    .w-sm-25{
+        width: auto;
+    }
+}
+.flex{
+    display: flex;
+}
+
+.al-right {
+    justify-content: flex-start;
+}
+
+.shadow {
+    -webkit-box-shadow: -18px 12px 49px 7px rgba(0,123,255,0.45);
+    -moz-box-shadow: -18px 12px 49px 7px rgba(0,123,255,0.45);
+    box-shadow: -18px 12px 49px 7px rgba(0,123,255,0.45);
+    background-color: var(--white);
+    border-radius: 1rem;
+    padding-bottom: 2rem;
+}
+
+ .nav-bg{
+    background-color: var(--blue);
+ }
+
+ .nav-main{
+    display: flex;
+    flex-direction: column;
+ }
+/*Media Querie
+Size of screen Tablet*/
+@media (min-width: 768px) {
+    .nav-main{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+ .nav-main a {
+    display: block;
+    text-align: center;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+ }
+ .nav-main a:hover{
+    background-color: var(--teal);
+ }
+.foot {
+    display: flex;
+    justify-content: space-between;
+}
+.contenedorfoot {
+    width: 20rem;
+    margin: 0 auto;
+}
+
+.hero {
+    background-repeat: no-repeat; /*Doesnt repeat same picture*/
+    background-size: cover;
+    height: 420px;
+    position: relative;
+    background-position: center center;
+    margin-bottom: 2rem;
+}
+
+/*No reapeat same image*/
+.a01{
+    background-image: url(https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2014_16/331056/hologramsinger.jpg);
+}
+.a02{
+    background-image: url(../img/img01/esp32_angel_beat.webp);
+}
+
+
+.containt-hero {
+    position:absolute;
+    background-color: rgba(0,0,0,0.7);/*Trnasparencia rgba*/
+    /*background-color: rbg(0 0 0 / 70%);*/
+    width: 100%;
+    height: 100%;
+    /*align vertical and horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.containt-hero h2,
+.containt-hero p{
+    color: var(--white);
+    font-weight: bold;
+}
+.localization{
+    display: flex;
+    align-items: flex-end;
+}
+/**services**/
+@media (min-width: 760px) {
+    .services{
+        display: grid;
+        /*split 1/n
+        grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-columns: repeat(4,1fr);
+        
+        /*short version
+        grid:200px 800px / 300px 300px;*/
+    }
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.service p{
+    line-height: 1.3;
+    text-align: center;
+    font-family: var(--bodyfont);
+}
+.service h2{
+    color:var(--blue);
+    font-weight: normal;
+}
+
+
+.service .icons{
+    height: 15rem;
+    width: 15rem;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/*Contact*/
+.forms{
+    background-color: rgba(255, 165, 0, 0.637);
+    width: min(60rem,100%);/*use little value*/
+    margin: 0 auto;
+    padding: 4rem;
+    border-radius: 2rem;
+    
+}
+.forms  fieldset{
+    border: none;
+}
+
+.forms legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--titles);
+}
+@media (min-width: 768px) {
+    .containt-fields{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+    /*avoid other class*/
+    .field:nth-child(3),
+    .field:nth-child(4){
+        grid-column: 1/3;
+    }
+}
+
+
+
+
+.field{
+    margin-bottom: 1rem;
+}
+
+.field textarea{
+    height: 9rem;
+}
+
+.field label{
+    color: var(--gray-dark);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+.footer{
+    text-align: center;
+}
+
+/**Articles*/
+@media (min-width: 760px) {
+    .services-aboutme{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2rem;
+    }
+}
+
+.contenedorText{
+    padding: 1rem;
+    max-width: 120rem;
+    margin-bottom: 12rem;
+}
+
+
+.contenedorText .aboutme__imgL{
+    width: 250px;
+    margin: 30px 30px 30px 0;
+    float: left;
+    transition: opacity 0.5s ease;
+}
+.alignCenter img{
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.videoCenter{
+    position: relative;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-bottom: 56.25%; /* Establece la relación de aspecto (16:9) del video */
+    padding-top: 1rem; /* Espacio adicional arriba del video, opcional */
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.videoCenter iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.contenedorText .aboutme__imgR{
+    width: 250px;
+    margin: 30px 30px 30px 0;
+    float: right;
+}
+.contenedorText p{
+    display: inline;
+    line-height: 1.5;
+    font-family:var(--bodyfont); ;
+    text-align: center;
+    color: var(--dark);
+    transition: opacity 0.5s ease; /* Transición de opacidad */
+}
+/*Code by: https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp */
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+ /* Create four equal columns that sits next to each other */
+.column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+table {
+    width: 90%;
+    margin-top: 20px;
+    padding: 1rem;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x:auto;
+}
+td {
+    border: 1px solid #ddd;
+    text-align: center;
+}
+.image-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+/*Botton UP*/
+#myBtn{
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 30px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden; 
+    outline: none;
+}

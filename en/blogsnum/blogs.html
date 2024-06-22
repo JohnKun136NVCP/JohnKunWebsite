@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;900&&family=Rubik+Iso&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/css/styles.css"as="style">
+    <link rel="icon" type="image/x-icon" href="/img/iaicon.ico">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/normalize.css" href="/css/normalize.css"as="style">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>My Blog</title>
+    <meta name="description" content="A guy with expectation of his life. In other words, talking about myself and my work. (～￣▽￣)～">
+    <meta name="keyworkds" content="netdeveloper, anime, blogs of science, blogs of anime,my live, cv, github,search me, projects,anime,science,software,developer,physicist, engineer,yoshiko,keima,kun,me">
+    <meta name="author" content="JohnKun136NVCP">
+</head>
+
+<body>
+    <header class="headerImg">
+        <h1 class="titlemain">Articles<span> projects</span><img src="/img/ranmaywy.webp" width="60px" height="60px" > </h1>
+    
+        <div class="nav-bg">
+            <nav class="nav-main contenedor">
+                <a href="/en/index.html">Home</a>
+                <a href="/en/aboutme.html">About me</a>
+                <a href="/en/blogsnum/blogs.html">Articles and projects</a>
+                <a href="/en/contactme.html">Contact</a>
+            </nav> <!--.nav-main contenedor-->
+        </div>
+    </header>
+    <section class="hero blogImg">
+        <div class="containt-hero">
+            <h2>'Yes... I... I destroy... the world... and... create it... anew.'</h2>
+            <div class="localization">
+                <p align="center">- Lelouch Lamperouge, from <img width="100px" src="https://i.pinimg.com/originals/25/8f/11/258f119f5bfa48f7543c7f76029d7b52.png"></p>
+            </div><!--.localization-->
+
+        </div><!--.containt-hero-->
+    </section>
+    <main class="contenedor shadow">
+        <h2 class="titlemain">My Articles</h2>
+        <ul id="articleList" class="containt-fields article-list  ">
+            <li class="articulo" data-tags="anime, ciencia, tecnologia" data-date="2023-09-01" data-numero="1">
+                <h2><a href="/en/blogs/art/art01.html">Hatsune Miku is not a hologram 🤯</a></h2>
+                <div class="containerTags">
+                    <img  src="https://i.cbc.ca/1.3597213.1580395854!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_940/hatsune-miku.JPG"></div> 
+                    <a href="https://www.cbc.ca/news/canada/montreal/hatsune-miku-mtl-1.5445686"><h4>Holographic pop star Hatsune Miku to perform Montreal concert | CBC News</h4></a>
+                </div>
+                <div class="artdescript"><p>Have you ever been to a Hatsune Miku concert? If your answer is yes, have you asked yourself "Why am I just watching a flat screen and it's not curved?" The answer is in optics. Would you like to discover what Hatsune Miku's secret is every time she sings and dazzles us with her performance on stage?</p></div>
+                <div class="tag anime">Anime</div>
+                <div class="tag science">Science</div>
+                <div class="tag tecnology">Technology </div>
+                <div class="tag date">23/10/23</div>
+                <div class="tag numart">1</div>
+                <div class="tag"> <button class="button" onclick="location.href='/en/blogs/art/art01.html'">Go to blog</button></div>
+            </li>
+            <li class="articulo" data-tags="tecnologia" data-date="2023-12-02" data-numero="2" data-page="1">
+                <h2><a href="/en/blogs/art/art02.html">🌐 Mirror, Mirror on the Net! 🕵️‍♂️</a></h2>
+                <div class="containerTags ">
+                    <img  class="shortImages" src="../../img/img01/esp32win.webp"><h4>Home of the ESP32 IDS website</h4></a>
+                </div>
+                <div class="artdescript"><p>This innovative project combines an Intrusion Detection System (IDS) with the power of ESP32 and the insight of Wireshark. ESP32, acting as the brain, monitors the network in real time, while Wireshark collects detailed data on network activity. What is most exciting is how we handle this data: we store it in a database for in-depth analysis and, at the same time, send it in real time to the ESP32. This duality allows us to not only detect but also actively react to potential threats.
+                <br>
+
+                Join us on this cyber-safe journey as we take network protection to the next level with the amazing IDS Port Mirror! 🔒🌐</p></div>
+                <div class="tag tecnology">Technology </div>
+                <div class="tag date">02/12/23</div>
+                <div class="tag numart">2</div>
+                <div class="tag"> <button class="button" onclick="location.href='/en/blogs/art/art02.html'">Go to blog</button></div>
+            </li>
+            <!---
+            <li class="articulo" data-etiqueta="etiqueta2" data-fecha="2023-09-03" data-numero="2">
+                <h2>Artículo 2</h2>
+                <p>Etiqueta: Etiqueta 2</p>
+            </li>
+            <li class="articulo" data-etiqueta="etiqueta3" data-fecha="2023-09-05" data-numero="3">
+                <h2>Artículo 3</h2>
+                <p>Etiqueta: Etiqueta 3</p>
+            </li>
+            <li class="articulo" data-etiqueta="anime" data-fecha="2023-09-30" data-numero="4">
+                <h2>Artículo 4</h2>
+                <p>Etiqueta: Etiqueta 3</p>
+            </li>-->
+        </ul>
+        <div class="formular">
+            <div class="search">
+                <div>
+                    <label class="field" for="filterTag">Tag:</label>
+                    <select class="radius-filter" id="filterTag">
+                        <option value="">All</option>
+                        <option value="anime">Anime</option>
+                        <option value="ciencia">Science</option>
+                        <option value="tecnologia">Technology</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="field" for="date-filter">Date:</label>
+                    <input type="date" class="radius-filter" id="filterDate">
+                </div>
+                <div>
+                    <label for="filterNumber">Article number:</label>
+                    <input type="text" class="radius-filter noarticule" id="filterNumber">
+                </div>
+                <div class="al-right flex ">
+                    <button class="boton .w-sm-100"  id="filterButton">Filter</button>
+                </div>
+            </div>
+        </div>
+        <div class="center-pagination">
+            <div class="pagination">
+                <button class="active" disabled="disabled">&laquo; Previous</button>
+                <button disabled="disabled" onclick="location.href='bloges02.html'" class="active" aria-disabled="true">Next &raquo;</button>
+            </div>
+        </div>
+        <script src="/js/artic.js"></script>
+
+    </main> 
+    <footer class="footer">
+        <div class="contenedor"></div>
+            <h2 class="titlemain">Contact me</h2>
+            <div class="foot contenedorfoot">
+                <a href="https://t.me/yoshimakayaba" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/telegram-app.png" alt="telegram-app"/>
+                </a>
+                <a href="https://www.linkedin.com/in/juan-angeles-hern%C3%A1ndez-b55182247/" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/linkedin--v2.png"alt="linkedin--v2" class="social"/>
+                </a>
+                <a href="https://github.com/JohnKun136NVCP" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/github--v1.png" alt="github--v1"/>
+                </a>
+                <a href="https://twitter.com/JohnWilliamBn" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/twitter-circled.png" alt="twitter-circled"/>         
+                </a>
+            </div>
+        </div>
+        <h4>All rights reserved. @YoshioKeimaKun DevNet</h4>
+    </footer>
+    
+</body>
+</html>

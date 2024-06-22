@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;900&&family=Rubik+Iso&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/css/styles.css"as="style">
+    <link rel="icon" type="image/x-icon" href="/img/iaicon.ico">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/normalize.css" href="/css/normalize.css"as="style">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>ブログ</title>
+    <meta name="description" content="自分の人生に期待している男。つまり、自分のこと、仕事のこと。(～￣▽￣)～">
+    <meta name="keyworkds" content="ネット開発者, アニメ, 科学のブログ, アニメのブログ, 私のライブ, 履歴書, github, 私を検索, プロジェクト, アニメ, 科学, ソフトウェア, 開発者, 物理学者, エンジニア,yoshiko,keima,kun,me">
+    <meta name="author" content="JohnKun136NVCP">
+</head>
+
+<body>
+    <header class="headerImg">
+        <h1 class="titlemain">アーティキュールと<span> プロジェクト</span><img src="/img/ranmaywy.webp" width="60px" height="60px" > </h1>
+    
+        <div class="nav-bg">
+            <nav class="nav-main contenedor">
+                <a href="/ja/index.html">ホーム</a>
+                <a href="/ja/aboutmejp.html">私について</a>
+                <a href="/ja/blogsnum/blogsjp.html">アーティキュールとプロジェクト</a>
+                <a href="/ja/contactmejp.html">連絡先</a>
+            </nav> <!--.nav-main contenedor-->
+        </div>
+    </header>
+    <section class="hero blogImg">
+        <div class="containt-hero">
+            <h2>「ルルーシュって、世界を破壊して、魔王。なんか、親近感を抱きますね。」</h2>
+            <div class="localization">
+                <p align="center">- ルルーシュ・ヴィ・ブリタニア, より <img width="100px" src="https://i.pinimg.com/originals/25/8f/11/258f119f5bfa48f7543c7f76029d7b52.png"></p>
+            </div><!--.localization-->
+
+        </div><!--.containt-hero-->
+    </section>
+    <main class="contenedor shadow">
+        <h2 class="titlemain">記事</h2>
+        <ul id="articleList" class="containt-fields article-list  ">
+            <!---
+            <li class="articulo" data-etiqueta="etiqueta2" data-fecha="2023-09-03" data-numero="2">
+                <h2>Artículo 2</h2>
+                <p>Etiqueta: Etiqueta 2</p>
+            </li>
+            <li class="articulo" data-etiqueta="etiqueta3" data-fecha="2023-09-05" data-numero="3">
+                <h2>Artículo 3</h2>
+                <p>Etiqueta: Etiqueta 3</p>
+            </li>
+            <li class="articulo" data-etiqueta="anime" data-fecha="2023-09-30" data-numero="4">
+                <h2>Artículo 4</h2>
+                <p>Etiqueta: Etiqueta 3</p>
+            </li>-->
+        </ul>
+        <div class="formular">
+            <div class="search">
+                <div>
+                    <label class="field" for="filterTag">Tag:</label>
+                    <select class="radius-filter" id="filterTag">
+                        <option value="">すべて</option>
+                        <option value="anime">アニメ</option>
+                        <option value="ciencia">科学</option>
+                        <option value="tecnologia">テクノロジー</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="field" for="date-filter">日付:</label>
+                    <input type="date" class="radius-filter" id="filterDate">
+                </div>
+                <div>
+                    <label for="filterNumber">記事番号:</label>
+                    <input type="text" class="radius-filter noarticule" id="filterNumber">
+                </div>
+                <div class="al-right flex ">
+                    <button class="boton .w-sm-100"  id="filterButton">フィルター</button>
+                </div>
+            </div>
+        </div>
+        <div class="center-pagination">
+            <div class="pagination">
+                <button class="active" disabled="disabled">&laquo; 前へ</button>
+                <button disabled="disabled" onclick="location.href='bloges02.html'" class="active" aria-disabled="true">次へ &raquo;</button>
+            </div>
+        </div>
+        <script src="/js/artic.js"></script>
+
+    </main> 
+    <footer class="footer">
+        <div class="contenedor"></div>
+            <h2 class="titlemain">連絡先</h2>
+            <div class="foot contenedorfoot">
+                <a href="https://t.me/yoshimakayaba" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/telegram-app.png" alt="telegram-app"/>
+                </a>
+                <a href="https://www.linkedin.com/in/juan-angeles-hern%C3%A1ndez-b55182247/" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/linkedin--v2.png"alt="linkedin--v2" class="social"/>
+                </a>
+                <a href="https://github.com/JohnKun136NVCP" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/github--v1.png" alt="github--v1"/>
+                </a>
+                <a href="https://twitter.com/JohnWilliamBn" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/twitter-circled.png" alt="twitter-circled"/>         
+                </a>
+            </div>
+        </div>
+        <h4>無断転載を禁じます。@YoshioKeimaKun DevNet</h4>
+    </footer>
+    
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta name="google-site-verification" content="ii25II9IdLP1lSIOn3oxzGTJWh5QdX47kSsflrIHsAM" />
     <meta name="msvalidate.01" content="4C23042BF6E51BE0F57DF26A03EE74EA" />
@@ -17,6 +17,24 @@
     <title>YoshioKeimaWebsite</title>
     <meta name="description" content="A guy with expectation of his life. In other words, talking about myself and my work. (～￣▽￣)～">
     <meta name="keyworkds" content="netdeveloper, anime, blogs of science, blogs of anime,my live, cv, github,search me, projects,anime,science,software,developer,physicist, engineer,yoshiko,keima,kun,me">
+    <meta name="author" content="JohnKun136NVCP">
+    <script>
+        let lang = window.navigator.languages ? window.navigator.languages[0] : null;
+        lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
+        let shortLang = lang;
+        if (shortLang.indexOf('-') !== -1)
+            shortLang = shortLang.split('-')[0];
+        if (shortLang.indexOf('_') !== -1)
+            shortLang = shortLang.split('_')[0];
+        if(shortLang === 'es-419')
+            window.location.replace('../' + shortLang + '/index.html');
+        if(shortLang === 'en-US')
+            console.log(shortLang)
+            window.location.replace('/' + shortLang + '/index.html');
+        if(shortLang === 'ja-JP')
+            console.log(shortLang)
+            window.location.replace('../' + shortLang + '/index.html');
+    </script>
 </head>
 <body>
     <header class="headerImg">
@@ -24,10 +42,10 @@
     
         <div class="nav-bg">
             <nav class="nav-main contenedor">
-                <a href="index.html">Home</a>
+                <a href="/en/index.html">Home</a>
                 <a href="/en/aboutme.html">About me</a>
-                <a href="/en/blogs.html">Projects</a>
-                <a href="/en/contactme.html"">Contact</a>
+                <a href="/en/blogs.html">Articles and projects</a>
+                <a href="/en/contactme.html">Contact</a>
             </nav> <!--.nav-main contenedor-->
         </div>
     </header>
@@ -73,37 +91,6 @@
                 <p>My personal blog is a digital space where I share insights, experiences, and perspectives on topics like networks, anime series,and my projects actually I'm working.</p>
             </section>
         </div><!--.services-->
-        <section>
-            <h2 class="titlemain">Contact</h2>
-            <div class="formular">
-                <form class="forms">
-                    <fieldset>
-                        <legend>If you have any suggestion please let me know </legend>
-                        <div class="containt-fields">
-                            <div class="field">
-                                <label>Name</label>
-                                <input class="input-text" type="text" placeholder="Your name">
-                            </div>
-                            <div class="field">
-                                <label>Email</label>
-                                <input class="input-text" type="text" placeholder="Your email">
-                            </div>
-                            <div class="field">
-                                <label>Email</label>
-                                <input class="input-text" type="email" placeholder="Your telegram. If you don't have, type 'none'">
-                            </div>
-                            <div class="field">
-                                <label>Message</label>
-                                <textarea class="input-text"></textarea>
-                            </div>
-                            <div class="al-right flex">    
-                                <input class="boton .w-sm-100" type="submit" value="Send">
-                            </div>
-                        </div><!--.containt.fields-->
-                    </fieldset>
-                </form>
-            </div> <!--Class formular-->
-        </section>
     </main> 
     <footer class="footer">
         <div class="contenedor"></div>
