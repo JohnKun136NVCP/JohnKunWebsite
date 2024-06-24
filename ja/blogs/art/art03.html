@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;900&&family=Rubik+Iso&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/css/stylesArticles.css"as="style">
+    <link rel="icon" type="image/x-icon" href="/img/iaicon.ico">
+    <link href="/css/stylesArticles.css" rel="stylesheet">
+    <link href="/css/normalize.css" href="/css/normalize.css"as="style">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>💌 PyMailCat: Python で電子メールを送信するためのグラフィカル インターフェイスを設計する 🐈</title>
+    <meta name="description" content="A guy with expectation of his life. In other words, talking about myself and my work. (～￣▽￣)～">
+    <meta name="keyworkds" content="netdeveloper, anime, blogs of science, blogs of anime,my live, cv, github,search me, projects,anime,science,software,developer,physicist, engineer,yoshiko,keima,kun,me">
+    <meta name="author" content="JohnKun136NVCP">
+</head>
+
+<body>
+    <header class="headerImg">
+        <h1 class="titlemain">Yoshio <span> Keima</span> </h1>
+    
+        <div class="nav-bg">
+            <nav class="nav-main contenedor">
+                <a href="/ja/index.html">ホーム</a>
+                <a href="/ja/aboutmejp.html">私について</a>
+                <a href="/ja/blogsnum/blogsjp.html">アーティキュールとプロジェクト</a>
+                <a href="/ja/contactmejp.html">連絡先</a>
+            </nav> <!--.nav-main contenedor-->
+        </div>
+    </header>
+    <section class="hero a03">
+        <div class="containt-hero">
+            <h2>💌 PyMailCat: Python で電子メールを送信するためのグラフィカル インターフェイスを設計する 🐈</h2>
+            <div class="localization">
+                <p>第2条 日付：2024年6月25日</p>
+            </div><!--.localization-->
+            <button onclick="topFunction()" id="myBtn" title="#"><img src="https://img.icons8.com/bubbles/50/000000/long-arrow-up.png"width="60px"/></button>
+        </div><!--.containt-hero-->
+    </section>
+    <main class="contenedor shadow">
+        <h1>💌 PyMailCat: Python で電子メールを送信するためのグラフィカル インターフェイスを設計する 🐈</h1>
+        <p>
+            主なインデックス：
+        </p>
+        <div class="artitle-list">
+            <ol>
+                <li><p><a href="#top1">Dear PyGuiは何ですか？</a></p></li>
+                <li><p><a href="#top2">Dear PyGui vs. Tkinter </a></p></li>
+                <li><p><a href="#top3">SMTP</a></p></li>
+                <li><p><a href="#top4">Google、Outlook、Yahoo</a></p></li>
+                <li><p><a href="#top5">PyMailCat: 構造</a></p></li>
+                <li><p><a href="#top6">貢献者</a></p></li>
+                <li><p><a href="#top7">参考文献</a></p></li>
+            </ol>
+        </div>
+        <h2> 1. Dear PyGuiは何ですか？<a id="top1"></a></h2>
+        <div class="alignCenter">
+            <img  class="aboutme__imgC" src="https://raw.githubusercontent.com/hoffstadt/DearPyGui/assets/readme/dpg_logo_button.png"> <h4><a>Dear PyGuiのロゴ</a></h4>
+        </div> 
+        <p>
+            Dear PyGui は、使いやすく、動的な、GPU アクセラレーションを備えたクロスプラットフォームの Python 用グラフィカル ユーザー インターフェイス (GUI) ツールキットです。 Dear ImGui を「使用して」構築されています。機能には、ボタン、ラジオ ボタン、メニューなどの従来の GUI 要素や、機能的なレイアウトを作成するためのさまざまな方法が含まれます。さらに、DPG には、驚くほど多様な動的なチャート、テーブル、図面、デバッガー、および複数のリソース ビューアが備わっています。 DPG は、シンプルなユーザー インターフェイスの作成だけでなく、複雑で要求の厳しいグラフィカル インターフェイスの開発にも最適です。 DPG は、科学、エンジニアリング、ゲーム、データ サイエンス、および高速でインタラクティブなインターフェイスを必要とするその他のアプリケーションを開発するための堅牢なフレームワークを提供します<a href="#top7">[1]</a>。
+        </p>
+        <p><b>Dear PyGui との第一歩</b></p>
+        <div class="scripting">
+            <script src="https://gist.github.com/JohnKun136NVCP/e63b9a10d8c74d65e0dd2511ac37950f.js"></script>
+        </div>
+        <p>さらに、これはオープンソースです。さらにドキュメント (英語) を確認したい場合は、<a href="https://dearpygui.readthedocs.io/en/latest/index.html" target="_blank" rel="noreferrer noopener">ここをクリックしてください</a>、Dear PyGui プロジェクトを見たい場合は、ここをクリックして <a href="https://github.com/hoffstadt/DearPyGui" target="_blank" rel="noreferrer noopener">Github リポジトリ</a>。</p>
+        <h2>Dear PyGui vs. Tkinter<a id="top2"></a> </h2>
+        <p>
+            Tkinter は、インストール時に Python ライブラリにすでに組み込まれています<a href="#top7">[2]</a>。さらに、このツールには英語だけでなくスペイン語のドキュメントも存在します。同様に、ビデオ ゲームの開発、レストランへの支払いなどのプロジェクトを開発することも可能です<a href="#top7">[3]</a>。ただし、Dear PyGui は、データ分析、予測、マルチプラットフォーム管理が可能であるため、より完全なツールであり、より完全なツールの開発に非常に役立ちます。公式ドキュメントは存在しますが、ドキュメントとは別に調査する必要があるため、ソフトウェアの開発に影響を及ぼす可能性のあるエラーやインシデントが発生する可能性があります。 
+        </p>
+
+        <h2>3. SMTP<a id="top3"></a></h2>
+        <p>
+            SMTP は英語の<i>「Simple Mail Transfer Protocol」</i> を指します。このサービスは今でも使用されており、コンピュータまたは携帯電話を通じてメッセージを送信する「電子メール」として知られています。 SMTP を組み込んでいる企業には、Google、Microsoft、Yahoo などもあります。独自のメールドメインを持っている企業もありますが。
+        </p>
+        <p>
+            私たちが電子メールを送信するときのプロセスは私たちから始まります。つまり、私たちが電子メールを書いて送信するとき、私たちは<i><b>MUA</b></i> <i>「メッセージ ユーザー エージェント」として知られています。 </i> に続いて、<i><b>MSA</b></i> <i>「メッセージ送信エージェント」</i> に従い、電子メールを送信することを確認します。つまり、Gmail を使用して電子メールを作成するとき、<i>MTA</i> は私たちであり、<i>MSA</i> は Gmail です。その後、<i><b>MTA</b></i>、<b>「メッセージ転送エージェント」</b> を使用して説明をもう少し簡略化し、前の例に戻ります。電子メールが Gmail から送信された場合、受信者が Outlook からの電子メールなどを使用すると、<i>MTA</i> は Outlook サーバーが見つかるまでインターネット上のサーバーを検索します。この時点で、<i><b>MX</b></i>、<b>「メール エクスチェンジャー」</b> は、名前が示すとおり、Gmail と Outlook のメッセージを交換します。交換が完了すると、Outlook サーバーはその情報をサーバーに送信します。このプロセスは <i><b>MDA</b></i>、<b>「メッセージ配信エージェント」</b> と呼ばれます。最後に、受信者がメールを受信します。これは <b><i>MRA</i></b>、<b>「メール取得エージェント」</b>、または <b>MUA</b> と呼ばれます。 <a href="#top7">[4][5][6][7][8][9]</a>。
+        </p>
+        <p>
+            これが電子メール システムと存在するすべてのプロセスの仕組みです。以下は、前の段落で説明した内容のイメージ図です。
+        </p>
+        <div class="alignCenter">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/SMTP-transfer-model.svg/600px-SMTP-transfer-model.svg.png">
+            <h4><a>SMTP プロトコル図、画像は以下から取得 <a href="https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol" style="color: coral;"><i>ウィキペディア</i>[10].</a></a></h4>
+        </div>
+       
+        <h2>4. Google、Outlook、Yahoo<a id="top4"></a></h2>
+
+        <p>
+            これらのサーバーは電子メールを送信するために存在するだけでなく、最も一般的なものであることを明確にすることが重要です。メールの制限についても覚えておきましょう。まず、メールのサイズは <b>25 MB</b> を超えることはできません。一方、メール送信時の受信者数は100人を超えることはできません。最後に、Google プロパティを使用してサードパーティのアプリを使用するには、アプリのパスワードを作成する必要があります。アプリケーション パスワードの作成方法に興味がある場合は、<a href="https://support.google.com/mail/answer/185833?hl=ja&sjid=7342968087607302214-NC">Google の公式ドキュメントをお読みください </a>。
+        </p>
+
+        <h2>5. PyMailCat: 構造<a id="top5"></a></h2>
+        <div class="alignCenter">
+            <img src="https://github.com/JohnKun136NVCP/PyMailCat/blob/main/src/emailLogo.jpeg?raw=true">
+            <h4><a>PyMailCatのロゴ</a></h4>
+        </div>
+        <p>
+            PyMailCat は Dear PyGui で設計されたプログラムで、グラフィカル インターフェイスから電子メールを送信できます。電子メール サーバーには <i>Gmail</i>、<i>Outlook/ Hotmail</i>、<i>Yahoo </i> を使用できます。私。画像（最大10枚まで）、PDFファイル（最大10枚まで）を送信できます。同様に、受信者 (最大 100 人) を<i>手動</i>、<i>Excel</i> ファイル、または<i>CSV</i> で入力することもできます。電子メールの本文は、<i>txt</i>、<i>HTML</i> の形式で入力できます。また、手動で入力することもできます。すべての受信者にブラインド コピー (Bcc) を含めることができます。同様に、<i>txt</i> ファイルまたは手動でトークンまたはパスワードを入力できます。
+        </p>
+        <p>
+            どのように動作するかを説明すると、このプログラムはモジュールに分割されており、そのうちの 1 つはユーザーが入力するフィールドを表示できるグラフィカル インターフェイスです。これは、対応する情報を<i>SMTP</i> と呼ばれる他のモジュールに送信するため、非常に重要です。このモジュールでは、データが正しいかどうか、またエラーが発生した場合には検証する必要があります。 「メールを送信できません」というメッセージを送信してみてください。以下はインターフェイス コードの一部と SMTP モジュールです。 <b>注</b>: <i>SMTP</i> モジュールを、デフォルトの Python ライブラリである <i>SMTPLIB</i> からのモジュールと混同しないでください。これらは独立しています。
+        </p>
+        <div class="scripting">
+            <script src="https://gist.github.com/JohnKun136NVCP/46cbe6ec1f5ed8673fb2bf23b59c06f6.js"></script>
+        </div>
+        <div class="scripting">
+            <script src="https://gist.github.com/JohnKun136NVCP/d4e4713f0a46e59404317ea3cc66893f.js"></script>
+        </div>
+        <p>
+            データ処理には別のモジュールが使用され、インターフェースからのデータの保存と取得、つまりボタンの機能の取得が可能になりました。最後に<i>メイン</i>があります。ここでは、すべてのコンポーネントを含むプログラムの実行全体が行われます。
+        </p>
+        <div class="scripting">
+            <script src="https://gist.github.com/JohnKun136NVCP/8fe109a6c8ef867c9e9b0f815c12a22e.js"></script>
+        </div>
+        <div class="scripting">
+            <script src="https://gist.github.com/JohnKun136NVCP/d3782acf85c172383e08bee299c25235.js"></script>
+        </div>
+        <p>
+            このプロジェクトに興味があれば、<a href="https://github.com/JohnKun136NVCP/PyMailCat">Github リポジトリ</a>にアクセスしてドキュメントを詳しく読むことができます。同様に、ぜひお読みください。プロジェクトに⭐️を任せます。
+        </p>
+        <h2>6. 貢献者<a id="top6"></a></h2>
+        <table>
+            <tr>
+              <td>
+                <div class="image-container">
+                    <a href="https://github.com/JohnKun136NVCP" target="_blank" rel="noreferrer noopener"> <img src="https://avatars.githubusercontent.com/u/73410627?v=4" width="100px" alt="Imagen 1"></a>
+                  </div>
+              </td>
+              <td>
+                  <div class="image-container">
+                    <a href="https://github.com/LyubomirT">
+                      <img src="https://avatars.githubusercontent.com/u/127299159?v=4" alt="Imagen 1" width="100px"></a>
+                </div>
+              </td>
+            </tr>
+          </table>
+
+        <h2>7. 参考文献<a id="top7"></a></h2>
+        <div class="reference">
+            <ol class="references">
+                <li><p>Dear PyGui documentation. Date: 21st June 2024. <a href="https://dearpygui.readthedocs.io/en/latest/about/what-why.html"> What & Why</a>.</p></li>
+                <li><p>Tkinter. Date: 21st June 2024. <a href=" https://docs.python.org/3/library/tkinter.html">tkinter — Python interface to Tcl/Tk </a>.</p></li>
+                <li><p>GUI Billing System and Menu Card Using Python. Date: 22nd June 2024. Geeks for Geeks. Last update: 3rd June 2024. <a href="https://www.geeksforgeeks.org/gui-billing-system-and-menu-card-using-python/">Geeks for Geeks</a>.</p></li>
+                <li><p>Email agent (infrastructure). Date: 22nd June 2024. Wikipedia, The Free Encyclopedia.  <a href="https://en.wikipedia.org/wiki/Email_agent_(infrastructure)">Classification</a>. </p></li>
+                <li><p>Email client. Date: 22nd June 2024. Wikipedia, The Free Encyclopedia.  <a href="https://en.wikipedia.org/wiki/Email_client">Email client</a>. </p></li>
+                <li><p>Message submission agent. Date: 22nd June 2024. Wikipedia, The Free Encyclopedia.  <a href="https://en.wikipedia.org/wiki/Message_submission_agent">Message submission agent</a>. </p></li>
+                <li><p>Message transfer agent. Date: 22nd June 2024. Wikipedia, The Free Encyclopedia.  <a href="https://en.wikipedia.org/wiki/Message_transfer_agent">Message transfer agent</a>. </p></li>
+                <li><p>Message delivery agent. Date: 22nd June 2024. Wikipedia, The Free Encyclopedia.  <a href="https://en.wikipedia.org/wiki/Message_delivery_agent">Message delivery agent</a>. </p></li>
+                <li><p>Mail retrieval agent. Date: 22nd June 2024. Wikipedia, The Free Encyclopedia.  <a href="https://en.wikipedia.org/wiki/Mail_retrieval_agent">Mail retrieval agent</a>. </p></li>
+                <li><p>Simple Mail Transfer Protocol. Date: 22nd June 2024. Wikipedia, The Free Encyclopedia.  <a href="https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol">Mail processing mode</a>. </p></li>
+            </ol>
+        </div> 
+    </main> 
+    <footer class="footer">
+        <div class="contenedor"></div>
+            <h2 class="titlemain">連絡先</h2>
+            <div class="foot contenedorfoot">
+                <a href="https://t.me/yoshimakayaba" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/telegram-app.png" alt="telegram-app"/>
+                </a>
+                <a href="https://www.linkedin.com/in/juan-angeles-hern%C3%A1ndez-b55182247/" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/linkedin--v2.png"alt="linkedin--v2" class="social"/>
+                </a>
+                <a href="https://github.com/JohnKun136NVCP" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/github--v1.png" alt="github--v1"/>
+                </a>
+                <a href="https://twitter.com/JohnWilliamBn" target="_blank" rel="noreferrer noopener">
+                <img width="45" height="45" src="https://img.icons8.com/doodle/48/twitter-circled.png" alt="twitter-circled"/>         
+                </a>
+            </div>
+        </div>
+        <h4>無断転載を禁じます。@YoshioKeimaKun DevNet</h4>
+    </footer>
+    <script src="/js/botton.js"></script>
+</body>
+</html>
