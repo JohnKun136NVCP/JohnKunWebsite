@@ -92,27 +92,28 @@ h4{
     color:var(--cyan);
 }
 .contenedor h2{
-    text-align: left;
+    text-align: center;
     color:var(--teal);
 }
+
 
 .contenedor p{
     text-align: justify;
     font-family: var(--bodyfont);
     font-size: 2.5rem;
     line-height: 1.3;
-    padding: 0.3rem;
-    margin-left: 1rem;
-    margin-right: 2rem;
+    padding: 0.4rem;
+    margin-left: 5rem;
+    margin-right: 4rem;
 }
 .contenedor h2{
     padding: 0.3rem;
     margin-left: 1rem;
 }
 
- .artitle-list ol,ul{
+.artitle-list ol,ul{
     margin-left: 1.5rem;
-    text-align: justify;
+    text-align: center;
     color: var(--blue);
     display: flex;
     flex-wrap: wrap;
@@ -266,7 +267,9 @@ Size of screen Tablet*/
 .a02{
     background-image: url(../img/img01/esp32_angel_beat.webp);
 }
-
+.a03{
+    background-image: url(../img/img01/neko_back.webp);
+}
 
 .containt-hero {
     position:absolute;
@@ -419,8 +422,8 @@ Size of screen Tablet*/
 
 .videoCenter{
     position: relative;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 4.2rem;
+    margin-right: 4.9rem;
     padding-bottom: 56.25%; /* Establece la relación de aspecto (16:9) del video */
     padding-top: 1rem; /* Espacio adicional arriba del video, opcional */
     height: 0;
@@ -530,4 +533,8 @@ td {
     cursor: pointer;
     overflow: hidden; 
     outline: none;
+}
+.scripting{
+    margin-left: 10rem;
+    margin-right: 9rem;
 }
