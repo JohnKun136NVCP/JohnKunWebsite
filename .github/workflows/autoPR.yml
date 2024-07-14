@@ -42,17 +42,17 @@ jobs:
                 const happyCelebrationsGifs = [
                   "https://i.imgur.com/MigSwFi.gif",
                   "https://media.tenor.com/vH8aIdO0YI4AAAAM/anime-kantai-collection.gif",
-                  "https://media.tenor.com/U0s8K6yJbPkAAAAM/afl-australian-rules.gif",
-                  "https://i.pinimg.com/originals/81/89/5a/81895a1491ee05919842558d867c6143.gif",
-                  "https://media.tenor.com/RxGETpJZvusAAAAM/luigi-you-win.gif",
-                  "https://media.tenor.com/PKsK8zJ-xbQAAAAM/gears-of-war-hug.gif",
-                  "https://i.pinimg.com/originals/56/d9/c3/56d9c3fd6524357656ae3b3b39d7ab66.gif",
-                  "https://i.pinimg.com/originals/7c/2c/5d/7c2c5df25e6b7935025dca16e6571d11.gif"
+                  "https://i.pinimg.com/originals/99/44/94/9944941e219589ba7f482d64d5aa20c1.gif",
+                  "https://i.pinimg.com/originals/89/a1/4e/89a14ee7bb058ea0126b12b19d9430c5.gif",
+                  "https://i.pinimg.com/originals/75/4a/7f/754a7f46800ae4e3392f8dffaf98cdcd.gif",
+                  "https://i.pinimg.com/originals/1a/7b/22/1a7b22158ba7ad7852e24124760e687b.gif",
+                  "https://i.pinimg.com/originals/8c/e6/d7/8ce6d74d5a786f88da89100b5c65cb8c.gif",
+                  "https://i.pinimg.com/originals/90/95/a6/9095a6f3c55a8241c657175876c90ba1.gif"
                 ]
 
                 const getRandomGif = () => happyCelebrationsGifs[Math.floor(Math.random() * happyCelebrationsGifs.length)]
                 const getMergeMessage = (username) => {
-                  const greeting = `Excelente @${username}, ¡Felicidades! Tu has hecho tu proyecto e hiciste el Pull Request de manera asombrosa. 🎉 😊🏆`;
+                  const greeting = `“Excellent, @${username}! 🎉 😊🏆. Thank you for your collaboration. Remember, if you liked the project, you can give it a ⭐`;
                   const gif = `![celebration gif](${getRandomGif()})`;
                   return `${greeting}\n\n${gif}`;
                 }
@@ -76,7 +76,4 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           echo "Starting deployment to production..."
-          # Add your deployment commands here
-          # For example, you might use SSH to connect to a server and run deployment scripts
-          # ssh user@yourserver.com 'bash -s' < deploy-script.sh
           echo "Deployment complete."
