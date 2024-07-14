@@ -22,7 +22,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 2
 
-      - name: MergePR
+      - name: Merge PR
         id: mergepr
         uses: actions/github-script@v6
         with:
@@ -71,3 +71,12 @@ jobs:
             } catch (error) {
               console.error(`Error merging pull request: ${error}`)
             }
+
+      - name: Deploy to production
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "Starting deployment to production..."
+          # Add your deployment commands here
+          # For example, you might use SSH to connect to a server and run deployment scripts
+          # ssh user@yourserver.com 'bash -s' < deploy-script.sh
+          echo "Deployment complete."
