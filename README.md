@@ -1,6 +1,6 @@
 # My website
 
-if you need it, take it 👍🏻.
+if you want it, take it 👍🏻.
 
 # Languages
 - 🇲🇽 Español (México)
