@@ -1,4 +1,4 @@
-# My website
+# My website 🌐
 
 if you want it, take it 👍🏻.
 
@@ -18,4 +18,4 @@ PSS! Try  to put an URL wrong an it'll appear something interesting... 👀
 
 For example [this example](https://yoshiokeimakun.me/fr/)
 
-⚜️ If something doesn't work, please let me know it, write an issue or if you have any solution, please make a PR.
+⚜️ If something doesn't work, please let me know it, write an issue or if you have any solution, please make a PR. (Don't be shy)
