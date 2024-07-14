@@ -10,6 +10,7 @@ if you need it, take it 👍🏻.
 # My blogs (Spanish, English, Japanese)
 -  Hatsune Miku (Not a hologram). 
 -  IDS Port Mirror Project.
+-  PyMailCat: Designing a Graphical Interface for Sending Emails in Python.
 
 Of course about once of hobbies is waching anime so website's theme is anime.
 
