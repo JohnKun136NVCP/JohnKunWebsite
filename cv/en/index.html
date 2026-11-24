@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juan Angeles · CV · Networking &amp; Cybersecurity</title>
+<meta name="description" content="CV of Juan Angeles: physicist (UNAM) focused on networking and cybersecurity. CCNA, Linux server administration, iptables, VPN and IDS.">
+<meta name="author" content="JohnKun136NVCP">
+<meta name="theme-color" content="#05090d">
+<link rel="icon" type="image/x-icon" href="../../img/iaicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05090d; --bg2:#0a1118; --panel:#0c141c; --line:#16242f; --line2:#1f3443;
+  --txt:#c9d6df; --mut:#6f8796; --green:#3dff9a; --cyan:#33d6ff; --amber:#ffb547; --red:#ff5d73;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace; --sans:"Space Grotesk",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px)}
+a{color:var(--cyan);text-decoration:none}
+a:hover{color:var(--green)}
+::selection{background:var(--green);color:var(--bg)}
+.mono{font-family:var(--mono)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* ---------- nav ---------- */
+nav.top{position:sticky;top:0;z-index:50;background:rgba(5,9,13,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:16px}
+.brand{font-family:var(--mono);font-weight:800;color:var(--green);font-size:15px;white-space:nowrap}
+.brand span{color:var(--mut)}
+nav.top ul{display:flex;gap:4px;list-style:none;font-family:var(--mono);font-size:13px;overflow-x:auto}
+nav.top ul a{color:var(--mut);padding:6px 10px;border-radius:4px;display:block;white-space:nowrap}
+nav.top ul a:hover,nav.top ul a.on{color:var(--green);background:rgba(61,255,154,.07)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;border-bottom:1px solid var(--line);overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;opacity:.75}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 25% 50%,transparent 0,var(--bg) 78%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.term{max-width:720px;background:rgba(10,17,24,.88);border:1px solid var(--line2);border-radius:8px;box-shadow:0 0 0 1px rgba(61,255,154,.05),0 30px 80px rgba(0,0,0,.6)}
+.term-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.term-bar i{width:11px;height:11px;border-radius:50%;background:var(--line2)}
+.term-bar i:nth-child(1){background:var(--red)}.term-bar i:nth-child(2){background:var(--amber)}.term-bar i:nth-child(3){background:var(--green)}
+.term-bar b{margin-left:10px;font:400 12px var(--mono);color:var(--mut)}
+.term-body{padding:22px 24px 26px;font-family:var(--mono);font-size:14px}
+.prompt{color:var(--green)}.prompt em{color:var(--cyan);font-style:normal}
+#typed{color:var(--txt)}
+.caret{display:inline-block;width:8px;height:16px;background:var(--green);vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero h1{font-family:var(--sans);font-size:clamp(38px,7vw,68px);line-height:1.02;letter-spacing:-.02em;margin:18px 0 6px;color:#fff}
+.hero h1 span{color:var(--green)}
+.role{color:var(--cyan);font-size:15px;margin-bottom:14px}
+.hero p.sum{font-family:var(--sans);font-size:16px;color:var(--txt);max-width:600px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{font:600 13px var(--mono);padding:10px 16px;border:1px solid var(--green);color:var(--green);border-radius:4px;transition:.2s}
+.btn:hover{background:var(--green);color:var(--bg)}
+.btn.ghost{border-color:var(--line2);color:var(--txt)}
+.btn.ghost:hover{border-color:var(--cyan);background:transparent;color:var(--cyan)}
+.reveal-line{opacity:0;transform:translateY(6px);transition:.5s}
+.reveal-line.show{opacity:1;transform:none}
+.status{position:absolute;right:24px;bottom:22px;z-index:2;font:12px var(--mono);color:var(--mut);text-align:right}
+.status b{color:var(--green);font-weight:400}
+
+/* ---------- sections ---------- */
+section.blk{padding:90px 0;border-bottom:1px solid var(--line)}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:36px;flex-wrap:wrap}
+.sh .cmd{font:13px var(--mono);color:var(--mut)}
+.sh .cmd b{color:var(--green);font-weight:400}
+.sh h2{font-size:clamp(26px,4vw,36px);color:#fff;letter-spacing:-.01em;width:100%}
+.sh h2 small{font:13px var(--mono);color:var(--amber);margin-left:10px;letter-spacing:0}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:24px;position:relative;transition:border-color .25s,transform .25s}
+.card:hover{border-color:var(--line2);transform:translateY(-2px)}
+.card .hdr{font:12px var(--mono);color:var(--mut);display:flex;justify-content:space-between;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.card h3{color:#fff;font-size:19px;line-height:1.3;margin-bottom:4px}
+.card .sub{color:var(--cyan);font-size:14px;margin-bottom:12px}
+.card ul{list-style:none}
+.card li{position:relative;padding-left:20px;margin:7px 0;font-size:15px}
+.card li::before{content:">";position:absolute;left:0;color:var(--green);font-family:var(--mono)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{font:11.5px var(--mono);padding:3px 8px;border:1px solid var(--line2);border-radius:3px;color:var(--txt);background:var(--bg2)}
+.links{display:flex;gap:14px;margin-top:14px;font:13px var(--mono)}
+
+/* about / objective */
+.obj{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start}
+.obj p{font-size:17px}
+.kv{font:13.5px var(--mono);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px}
+.kv div{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.kv div:last-child{border:0}
+.kv span{color:var(--mut)}
+.kv b{color:var(--txt);font-weight:400;text-align:right}
+.kv b.ok{color:var(--green)}
+
+/* skills: nmap style */
+.scan{background:var(--panel);border:1px solid var(--line);border-radius:8px;font-family:var(--mono);font-size:13.5px;overflow-x:auto}
+.scan .head{padding:16px 20px;border-bottom:1px solid var(--line);color:var(--mut);line-height:1.7}
+.scan .head b{color:var(--green);font-weight:400}
+.scan table{width:100%;border-collapse:collapse;min-width:640px}
+.scan th{text-align:left;color:var(--mut);font-weight:400;padding:10px 20px;border-bottom:1px solid var(--line)}
+.scan td{padding:13px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+.scan tr:last-child td{border:0}
+.scan tr:hover td{background:rgba(51,214,255,.03)}
+.scan td.port{color:var(--cyan);white-space:nowrap}
+.scan td.st{color:var(--green);white-space:nowrap}
+.scan td.svc{color:#fff;white-space:nowrap}
+.scan td.ver{color:var(--txt);font-family:var(--sans);font-size:14.5px}
+
+/* languages */
+.langs{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:22px}
+.lang{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;font-family:var(--mono)}
+.lang .n{color:#fff;font-size:14px}
+.lang .l{color:var(--amber);font-size:12px}
+.bar{height:6px;background:var(--bg2);border-radius:3px;margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--cyan));transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+
+/* timeline / traceroute */
+.trace{position:relative;padding-left:34px}
+.trace::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--green),var(--line2))}
+.hop{position:relative;margin-bottom:22px}
+.hop::before{content:attr(data-hop);position:absolute;left:-34px;top:20px;width:22px;height:22px;border-radius:50%;background:var(--bg);border:2px solid var(--green);font:10px/18px var(--mono);text-align:center;color:var(--green)}
+
+/* certs */
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.cert{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--line2);border-radius:6px;padding:16px 18px;transition:.25s}
+.cert:hover{border-left-color:var(--green)}
+.cert.hl{border-left-color:var(--green);background:linear-gradient(90deg,rgba(61,255,154,.06),var(--panel) 60%)}
+.cert .t{color:#fff;font-weight:600;font-size:15.5px;line-height:1.35}
+.cert .m{font:12px var(--mono);color:var(--mut);margin-top:6px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.cert .m a{color:var(--cyan)}
+.badge{font:11px var(--mono);color:var(--bg);background:var(--green);padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:2px}
+
+/* extra */
+.extra{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.extra .card p{font-size:15px}
+
+/* contact */
+.contact{text-align:center}
+.contact .big{font:800 clamp(22px,4vw,34px) var(--mono);color:#fff;word-break:break-all}
+.contact .big a{color:var(--green)}
+.socials{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:26px}
+footer{padding:30px 0;text-align:center;font:12px var(--mono);color:var(--mut)}
+footer a{color:var(--mut)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .grid2,.obj,.extra{grid-template-columns:1fr}
+  .langs{grid-template-columns:repeat(2,1fr)}
+  nav.top ul{display:none}
+  .status{display:none}
+  section.blk{padding:64px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv,.reveal-line{opacity:1;transform:none}
+}
+@media print{
+  body::before,#net,nav.top,.status,.cta{display:none}
+  body{background:#fff;color:#000}
+  .card,.scan,.cert,.kv,.lang,.term{background:#fff;border-color:#bbb}
+  .rv,.reveal-line{opacity:1;transform:none}
+  .hero{min-height:auto}
+}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="#home">juan@angeles<span>:~$</span></a>
+    <ul>
+      <li><a href="#profile">profile</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#certifications">certifications</a></li>
+      <li><a href="#contact">contact</a></li>
+      <li><a href="../">ES</a></li>
+      <li><a href="../../en/index.html">← site</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="home">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="term">
+      <div class="term-bar"><i></i><i></i><i></i><b>ssh juan@cdmx.mx — 80×24</b></div>
+      <div class="term-body">
+        <div><span class="prompt">juan@angeles<em>:~$</em></span> <span id="typed"></span><span class="caret"></span></div>
+        <div class="reveal-line" id="r1">
+          <h1>Juan <span>Angeles</span></h1>
+          <div class="role">// Physicist · Networking &amp; Cybersecurity · CCNA</div>
+        </div>
+        <p class="sum reveal-line" id="r2">Early-career networking and cybersecurity professional. I administer Linux servers, monitor networks and deploy defenses with iptables, VPN and IDS. I care about protecting critical infrastructure.</p>
+        <div class="cta reveal-line" id="r3">
+          <a class="btn" href="#projects">./view_projects</a>
+          <a class="btn ghost" href="#contact">./contact_me</a>
+          <a class="btn ghost" href="https://github.com/JohnKun136NVCP" target="_blank" rel="noopener noreferrer">github ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="status">
+    <div>LOC <b>Mexico City</b></div>
+    <div>NODES <b id="nc">0</b> · PKTS <b id="pc">0</b></div>
+    <div>IDS <b>ARMED</b></div>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= PERFIL ================= -->
+<section class="blk" id="profile">
+  <div class="wrap">
+    <div class="sh rv"><span class="cmd"><b>$</b> cat objective.txt</span><h2>Professional objective</h2></div>
+    <div class="obj">
+      <div class="rv">
+        <p>Early-career professional with solid knowledge of <strong>networking and cybersecurity</strong>, backed by <strong>CCNA</strong> coursework and progress toward <strong>CCNP Security</strong>.</p>
+        <p style="margin-top:14px">Experience in Linux server administration, network monitoring, deploying security controls (iptables, VPN, IDS) and technical support. I am looking to apply my skills in a challenging environment that values the protection of critical infrastructure and technological innovation.</p>
+      </div>
+      <div class="kv rv" aria-label="Education">
+        <div><span>institution</span><b>UNAM (National Autonomous University of Mexico)</b></div>
+        <div><span>degree</span><b>Physics</b></div>
+        <div><span>period</span><b>Aug 2019 – Nov 2025</b></div>
+        <div><span>GPA</span><b class="ok">8.91 / 10 (3.55 / 4.0)</b></div>
+        <div><span>focus</span><b>networks · cryptography · data</b></div>
+        <div><span>location</span><b>Mexico City</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HABILIDADES ================= -->
+<section class="blk" id="skills">
+  <div class="wrap">
+    <div class="sh rv"><span class="cmd"><b>$</b> nmap -sV -p- juan.angeles</span><h2>Technical skills</h2></div>
+    <div class="scan rv">
+      <div class="head">
+        Starting Nmap scan for <b>juan.angeles</b> (Mexico City)<br>
+        Host is up (0.0019s latency). Not shown: 65528 filtered ports
+      </div>
+      <table>
+        <thead><tr><th>PORT</th><th>STATE</th><th>SERVICE</th><th>VERSION</th></tr></thead>
+        <tbody>
+          <tr><td class="port">22/tcp</td><td class="st">open</td><td class="svc">net-security</td><td class="ver">CCNA (Routing &amp; Switching, security fundamentals), CCNP Security (partial), iptables, VPN, IDS/IPS, traffic monitoring, Cisco switches/routers, Wireshark, Kali Linux (basic pentesting)</td></tr>
+          <tr><td class="port">111/tcp</td><td class="st">open</td><td class="svc">operating-sys</td><td class="ver">Linux (Red Hat, Rocky, Ubuntu), Windows Server, server administration, shell scripting</td></tr>
+          <tr><td class="port">443/tcp</td><td class="st">open</td><td class="svc">programming</td><td class="ver">Python (data analysis, automation), C/C++, Bash, JavaScript, PHP</td></tr>
+          <tr><td class="port">3306/tcp</td><td class="st">open</td><td class="svc">databases</td><td class="ver">MySQL, MariaDB, SQL queries</td></tr>
+          <tr><td class="port">2376/tcp</td><td class="st">open</td><td class="svc">tooling</td><td class="ver">Git, Docker (basic), AWS (concepts), Azure (fundamentals), Jira, Zulip</td></tr>
+          <tr><td class="port">8888/tcp</td><td class="st">open</td><td class="svc">data-analysis</td><td class="ver">Pandas, Matplotlib, Seaborn, NetworkX, Excel</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sh rv" style="margin:56px 0 0"><span class="cmd"><b>$</b> locale -a</span><h2>Languages</h2></div>
+    <div class="langs">
+      <div class="lang rv"><div class="n">Spanish</div><div class="l">native</div><div class="bar"><i data-w="100"></i></div></div>
+      <div class="lang rv"><div class="n">English</div><div class="l">B2</div><div class="bar"><i data-w="72"></i></div></div>
+      <div class="lang rv"><div class="n">Japanese</div><div class="l">N4</div><div class="bar"><i data-w="40"></i></div></div>
+      <div class="lang rv"><div class="n">French</div><div class="l">A1</div><div class="bar"><i data-w="16"></i></div></div>
+      <div class="lang rv"><div class="n">German · Russian</div><div class="l">A1 · A1</div><div class="bar"><i data-w="16"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROYECTOS ================= -->
+<section class="blk" id="projects">
+  <div class="wrap">
+    <div class="sh rv"><span class="cmd"><b>$</b> ls -la ~/projects</span><h2>Projects</h2></div>
+    <div class="grid2">
+      <article class="card rv">
+        <div class="hdr"><span>drwxr-x--- ids-esp32/</span><span>Feb – Jun 2024</span></div>
+        <h3>ESP32-based IDS</h3>
+        <div class="sub">Intrusion detection for local networks</div>
+        <ul>
+          <li>Built an IDS that monitors network traffic and sends Telegram alerts on anomalous behavior.</li>
+          <li>Developed a web interface with secure authentication (SHA-256) and real-time traffic dashboards.</li>
+          <li>Configured a Linux server with VPN for secure remote access to monitoring data.</li>
+        </ul>
+        <div class="tags"><span class="tag">C++</span><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">MariaDB</span><span class="tag">Telegram API</span></div>
+        <div class="links"><a href="https://github.com/JohnKun136NVCP/ids-port-mirror" target="_blank" rel="noopener noreferrer">repo ↗</a></div>
+      </article>
+
+      <article class="card rv">
+        <div class="hdr"><span>drwxr-x--- hoshimya-bot/</span><span>Jan 2025</span></div>
+        <h3>Hoshimya Anime Bot</h3>
+        <div class="sub">Telegram bot with API integrations</div>
+        <ul>
+          <li>Cross-platform bot (Linux/Windows) that queries APIs to recommend anime, manga and music.</li>
+          <li>Language and user persistence with MySQL, built to scale.</li>
+          <li>HTTPS communication and secure token handling.</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Telegram API</span><span class="tag">YouTube API</span><span class="tag">MyAnimeList API</span><span class="tag">MySQL</span></div>
+        <div class="links"><a href="https://github.com/Hoshimya-Animation/hoshiiTelegramBot" target="_blank" rel="noopener noreferrer">repo ↗</a><a href="https://t.me/hoshiianimebot" target="_blank" rel="noopener noreferrer">try the bot ↗</a></div>
+      </article>
+
+      <article class="card rv">
+        <div class="hdr"><span>drwxr-x--- pymailcat/</span><span>Jun 2024</span></div>
+        <h3>PyMailCat</h3>
+        <div class="sub">GUI client for sending emails with attachments</div>
+        <ul>
+          <li>Graphical interface for securely sending bulk emails with attachments (TLS/SSL).</li>
+          <li>Used in digital marketing campaigns, cutting sending time by 70%.</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SMTP</span><span class="tag">TLS/SSL</span><span class="tag">DearPyGui</span></div>
+        <div class="links"><a href="https://github.com/JohnKun136NVCP/PyMailCat" target="_blank" rel="noopener noreferrer">repo ↗</a></div>
+      </article>
+
+      <article class="card rv">
+        <div class="hdr"><span>drwxr-x--- network-science/</span><span>Oct – Nov 2022</span></div>
+        <h3>Propagation in advertising networks</h3>
+        <div class="sub">Network science applied to campaigns</div>
+        <ul>
+          <li>Applied community detection (Girvan-Newman, Louvain) to public data to optimize ad campaigns.</li>
+          <li>Data cleaning and visualization; identified influential nodes to maximize reach.</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">NetworkX</span><span class="tag">Pandas</span><span class="tag">Jupyter</span></div>
+        <div class="links"><a href="https://github.com/JohnKun136NVCP/Network-Science_TSFC_UNAM" target="_blank" rel="noopener noreferrer">repo ↗</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCIA ================= -->
+<section class="blk" id="experience">
+  <div class="wrap">
+    <div class="sh rv"><span class="cmd"><b>$</b> traceroute career</span><h2>Experience</h2></div>
+    <div class="trace">
+      <div class="hop rv" data-hop="1">
+        <article class="card">
+          <div class="hdr"><span>PROTECO · School of Engineering, UNAM</span><span>Mar – Dec 2022</span></div>
+          <h3>LAN Security Project Lead</h3>
+          <ul>
+            <li>Managed perimeter security for the program’s server, using iptables rules and a proxy to mitigate DDoS attacks.</li>
+            <li>Ran vulnerability audits and hardened the network configuration.</li>
+            <li>Led a team of 3, improving service stability by 40%.</li>
+          </ul>
+          <div class="tags"><span class="tag">iptables</span><span class="tag">proxy</span><span class="tag">DDoS mitigation</span><span class="tag">auditing</span><span class="tag">leadership</span></div>
+          <div class="links"><a href="https://github.com/PROTECO/website" target="_blank" rel="noopener noreferrer">repo ↗</a></div>
+        </article>
+      </div>
+      <div class="hop rv" data-hop="2">
+        <article class="card">
+          <div class="hdr"><span>PROTECO · School of Engineering, UNAM</span><span>volunteer</span></div>
+          <h3>Teaching Assistant &amp; Course Promoter</h3>
+          <ul>
+            <li>Teaching assistant for Python and Machine Learning courses.</li>
+            <li>Promoted technology courses at the School of Engineering (2022).</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CERTIFICACIONES ================= -->
+<section class="blk" id="certifications">
+  <div class="wrap">
+    <div class="sh rv"><span class="cmd"><b>$</b> openssl x509 -noout -subject *.crt</span><h2>Licenses &amp; certifications</h2></div>
+    <div class="certs">
+      <div class="cert hl rv"><div class="t">Cisco Certified Network Associate (CCNAv7)<span class="badge">CCNA</span></div><div class="m"><span>Cisco</span><span>Nov 2026</span></div></div>
+      <div class="cert rv"><div class="t">Basic GNU/Linux Course</div><div class="m"><span>Materials Research Institute (IIM), UNAM</span><span>May – Jun 2025</span></div></div>
+      <div class="cert rv"><div class="t">Linux Server Management and Security</div><div class="m"><span>Coursera · <a href="https://coursera.org/share/c47bcc29743f8ac2f38867cfa96aab1e" target="_blank" rel="noopener noreferrer">verify ↗</a></span><span>Jul 2024</span></div></div>
+      <div class="cert rv"><div class="t">Introduction to Web Development</div><div class="m"><span>Coursera · <a href="https://www.coursera.org/account/accomplishments/certificate/TMGJUY5BGHNU" target="_blank" rel="noopener noreferrer">verify ↗</a></span><span>Dec 2022</span></div></div>
+      <div class="cert rv"><div class="t">Managing Cybersecurity Incidents and Disasters</div><div class="m"><span>Coursera · <a href="https://www.coursera.org/account/accomplishments/certificate/ND2YVWTYWCGC" target="_blank" rel="noopener noreferrer">verify ↗</a></span><span>Dec 2022</span></div></div>
+      <div class="cert rv"><div class="t">Machine Learning I</div><div class="m"><span>PROTECO · F11-CP-2022-C01-447</span><span>Jul 2022</span></div></div>
+      <div class="cert rv"><div class="t">Teacher Training for Scholarship Holders</div><div class="m"><span>PROTECO – UNAM</span><span>Dec 2021</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXTRA ================= -->
+<section class="blk" id="extra">
+  <div class="wrap">
+    <div class="sh rv"><span class="cmd"><b>$</b> cat /etc/motd</span><h2>Additional information</h2></div>
+    <div class="extra">
+      <div class="card rv"><div class="hdr"><span>interests</span></div><p>Technical reading, basketball, language learning and security communities (CTFs, meetups).</p></div>
+      <div class="card rv"><div class="hdr"><span>community</span></div><p>Technology course promoter and teaching assistant for Python and Machine Learning at PROTECO.</p></div>
+      <div class="card rv"><div class="hdr"><span>references</span></div><p>Available on request: thesis advisor (IIM, UNAM) and colleagues from the networking and analytics industry.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section class="blk contact" id="contact">
+  <div class="wrap">
+    <div class="sh rv" style="justify-content:center"><span class="cmd"><b>$</b> nc -v juan.angeles 25</span><h2>Contact</h2></div>
+    <div class="big rv"><a href="mailto:juan1999ah@gmail.com">juan1999ah@gmail.com</a></div>
+    <div class="socials rv">
+      <a class="btn ghost" href="https://www.linkedin.com/in/johnah/" target="_blank" rel="noopener noreferrer">linkedin ↗</a>
+      <a class="btn ghost" href="https://github.com/JohnKun136NVCP" target="_blank" rel="noopener noreferrer">github ↗</a>
+      <a class="btn ghost" href="https://twitter.com/tatyoshio0111" target="_blank" rel="noopener noreferrer">x / twitter ↗</a>
+      <a class="btn ghost" href="https://yoshiokeimakun.me" target="_blank" rel="noopener noreferrer">yoshiokeimakun.me ↗</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">© Juan Angeles · <a href="../../en/index.html">YoshioKeima DevNet</a> · <span id="yr"></span> · connection closed by remote host.</div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---- typed command ---- */
+  var cmd = 'whoami --verbose', el = document.getElementById('typed'), i = 0;
+  function showLines(){ ['r1','r2','r3'].forEach(function(id,k){ setTimeout(function(){ document.getElementById(id).classList.add('show'); }, reduce?0:k*260); }); }
+  if (reduce){ el.textContent = cmd; showLines(); }
+  else (function type(){ if(i<=cmd.length){ el.textContent = cmd.slice(0,i++); setTimeout(type, 55+Math.random()*60); } else setTimeout(showLines,250); })();
+
+  /* ---- network topology canvas ---- */
+  var cv = document.getElementById('net'), cx = cv.getContext('2d'), W, H, dpr, nodes = [], pkts = [], sent = 0;
+  var nc = document.getElementById('nc'), pc = document.getElementById('pc');
+  function size(){
+    dpr = Math.min(window.devicePixelRatio||1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W*dpr; cv.height = H*dpr; cx.setTransform(dpr,0,0,dpr,0,0);
+    var n = Math.max(18, Math.min(60, Math.round(W*H/22000)));
+    nodes = [];
+    for (var k=0;k<n;k++){
+      var r = Math.random();
+      nodes.push({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*.25, vy:(Math.random()-.5)*.25,
+        t: r<.12?'router':(r<.3?'switch':'host'), threat:false});
+    }
+    nc.textContent = n;
+  }
+  function links(){
+    var L = [], max = Math.min(W,H)*0.24;
+    for (var a=0;a<nodes.length;a++) for (var b=a+1;b<nodes.length;b++){
+      var dx=nodes[a].x-nodes[b].x, dy=nodes[a].y-nodes[b].y, d=Math.sqrt(dx*dx+dy*dy);
+      if (d<max) L.push([a,b,1-d/max]);
+    }
+    return L;
+  }
+  function frame(){
+    cx.clearRect(0,0,W,H);
+    nodes.forEach(function(n){ n.x+=n.vx; n.y+=n.vy; if(n.x<0||n.x>W) n.vx*=-1; if(n.y<0||n.y>H) n.vy*=-1; });
+    var L = links();
+    L.forEach(function(l){
+      var a=nodes[l[0]], b=nodes[l[1]];
+      cx.strokeStyle='rgba(51,214,255,'+(l[2]*0.28)+')'; cx.lineWidth=1;
+      cx.beginPath(); cx.moveTo(a.x,a.y); cx.lineTo(b.x,b.y); cx.stroke();
+    });
+    if (L.length && Math.random()<0.18 && pkts.length<40){
+      var l = L[(Math.random()*L.length)|0], bad = Math.random()<0.07;
+      pkts.push({a:l[0], b:l[1], p:0, s:0.008+Math.random()*0.014, bad:bad});
+      sent++; pc.textContent = sent;
+    }
+    pkts = pkts.filter(function(k){
+      k.p += k.s; if (k.p>=1){ if(k.bad){ nodes[k.b].threat=60; } return false; }
+      var a=nodes[k.a], b=nodes[k.b], x=a.x+(b.x-a.x)*k.p, y=a.y+(b.y-a.y)*k.p;
+      cx.fillStyle = k.bad ? '#ff5d73' : '#3dff9a';
+      cx.shadowColor = cx.fillStyle; cx.shadowBlur = 8;
+      cx.fillRect(x-1.5,y-1.5,3,3); cx.shadowBlur = 0;
+      return true;
+    });
+    nodes.forEach(function(n){
+      var c = n.threat ? '#ff5d73' : (n.t==='router' ? '#3dff9a' : (n.t==='switch' ? '#33d6ff' : '#4b6575'));
+      cx.fillStyle = c; cx.strokeStyle = c;
+      if (n.t==='router'){ cx.beginPath(); cx.arc(n.x,n.y,4.5,0,7); cx.fill(); cx.beginPath(); cx.arc(n.x,n.y,9,0,7); cx.globalAlpha=.3; cx.stroke(); cx.globalAlpha=1; }
+      else if (n.t==='switch'){ cx.fillRect(n.x-4,n.y-3,8,6); }
+      else { cx.beginPath(); cx.arc(n.x,n.y,2.2,0,7); cx.fill(); }
+      if (n.threat){ cx.beginPath(); cx.arc(n.x,n.y,14-(n.threat/6),0,7); cx.globalAlpha=n.threat/60; cx.stroke(); cx.globalAlpha=1; n.threat--; if(n.threat<=0) n.threat=false; }
+    });
+    if (!reduce) requestAnimationFrame(frame);
+  }
+  size(); frame();
+  var rt; window.addEventListener('resize', function(){ clearTimeout(rt); rt=setTimeout(function(){ size(); if(reduce) frame(); },150); });
+
+  /* ---- scroll reveal + language bars ---- */
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in');
+      var bar = e.target.querySelector('.bar i'); if(bar) bar.style.width = bar.dataset.w+'%';
+      io.unobserve(e.target); } });
+  },{threshold:.12}) : null;
+  document.querySelectorAll('.rv').forEach(function(n){
+    if(io) io.observe(n); else { n.classList.add('in'); var b=n.querySelector('.bar i'); if(b) b.style.width=b.dataset.w+'%'; }
+  });
+
+  /* ---- active nav ---- */
+  var links2 = document.querySelectorAll('nav.top ul a[href^="#"]');
+  var secs = Array.prototype.map.call(links2, function(a){ return document.querySelector(a.getAttribute('href')); });
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY + 120, cur = -1;
+    secs.forEach(function(s,k){ if(s && s.offsetTop<=y) cur=k; });
+    links2.forEach(function(a,k){ a.classList.toggle('on', k===cur); });
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
